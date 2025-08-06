@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JotForm Escalation Example</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f7fafc;
+            padding: 20px;
+        }
+
+        .jotform-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .basic-faq {
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faq-item:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+
+        .escalation-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .escalation-card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .escalation-card ul {
+            text-align: left;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        .escalation-card li {
+            margin: 8px 0;
+            padding-left: 5px;
+        }
+
+        .escalation-btn {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .escalation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .trigger-text {
+            margin: 20px 0;
+        }
+
+        .trigger-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .demo-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="jotform-container">
+        <div class="demo-info">
+            <h2>🔗 JotForm + Prashna Integration Demo</h2>
+            <p>This shows how JotForm can escalate users to your advanced Prashna chatbot at <strong>172.28.0.217:5000</strong></p>
+        </div>
+
+        <h2>Zer0 Customer Support - Basic Help</h2>
+        
+        <div class="basic-faq">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item" onclick="handleFAQ(this)">
+                <strong>Q:</strong> How do I reset my password?
+            </div>
+            <div class="faq-item" onclick="handleFAQ(this)">
+                <strong>Q:</strong> What are your business hours?
+            </div>
+            <div class="faq-item" onclick="handleFAQ(this)">
+                <strong>Q:</strong> How do I contact support?
+            </div>
+            <div class="faq-item" onclick="handleFAQ(this)">
+                <strong>Q:</strong> Where can I find my order status?
+            </div>
+        </div>
+
+        <div class="trigger-text">
+            <h3>Still need help? Describe your issue:</h3>
+            <input type="text" class="trigger-input" id="userInput" 
+                   placeholder="Type your question or issue here..." 
+                   onkeyup="checkForEscalation(this.value)">
+        </div>
+
+        <div class="escalation-card" id="escalationCard">
+            <h3>🚀 Need Advanced Support?</h3>
+            <p>For complex issues, our AI assistant <strong>Prashna</strong> can provide:</p>
+            <ul>
+                <li>✅ Detailed ticket creation with priority assignment</li>
+                <li>✅ Real-time agent matching and ETA predictions</li>
+                <li>✅ Multi-step troubleshooting workflows</li>
+                <li>✅ Direct escalation to live agents</li>
+                <li>✅ Smart categorization and routing</li>
+            </ul>
+            <a href="http://172.28.0.217:5000?ref=jotform&issue=complex" 
+               class="escalation-btn" target="_blank">
+                💬 Chat with Prashna AI
+            </a>
+            <p style="margin-top: 15px; font-size: 14px; opacity: 0.9;">
+                Opens in new window • Advanced AI support • Free
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let faqAttempts = 0;
+        const escalationKeywords = ['urgent', 'escalate', 'complex', 'not working', 'broken', 'error', 'bug', 'issue', 'problem', 'help me', 'technical'];
+
+        function handleFAQ(element) {
+            faqAttempts++;
+            element.style.background = '#d4edda';
+            element.innerHTML += '<br><small style="color: #155724;">✓ Thanks for checking this FAQ!</small>';
+            
+            // Show escalation after 3 FAQ attempts
+            if (faqAttempts >= 3) {
+                showEscalation('You\'ve checked several FAQs. Need more detailed help?');
+            }
+        }
+
+        function checkForEscalation(text) {
+            const lowerText = text.toLowerCase();
+            
+            // Check for escalation keywords
+            const hasEscalationKeyword = escalationKeywords.some(keyword => 
+                lowerText.includes(keyword)
+            );
+            
+            // Check for question length (complex issues are usually longer)
+            const isComplexQuery = text.length > 50;
+            
+            if (hasEscalationKeyword || isComplexQuery) {
+                showEscalation('This looks like a complex issue that needs detailed attention.');
+            }
+        }
+
+        function showEscalation(reason) {
+            const card = document.getElementById('escalationCard');
+            if (card.style.display !== 'block') {
+                card.style.display = 'block';
+                
+                // Add reason if provided
+                if (reason) {
+                    const reasonP = document.createElement('p');
+                    reasonP.style.fontSize = '14px';
+                    reasonP.style.marginBottom = '15px';
+                    reasonP.style.opacity = '0.9';
+                    reasonP.innerHTML = `💡 ${reason}`;
+                    card.insertBefore(reasonP, card.querySelector('ul'));
+                }
+                
+                // Scroll to escalation card
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Auto-show escalation after 30 seconds if no interaction
+        setTimeout(() => {
+            if (faqAttempts === 0 && document.getElementById('userInput').value === '') {
+                showEscalation('Taking a while to find what you need?');
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

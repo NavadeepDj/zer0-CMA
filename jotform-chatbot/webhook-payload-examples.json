@@ -1,0 +1,116 @@
+{
+  "new_complaint_payload": {
+    "description": "Payload sent when user submits a new complaint",
+    "endpoint": "/api/webhook/complaint",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "X-JotForm-Webhook": "complaint-chatbot"
+    },
+    "payload": {
+      "action": "new_complaint",
+      "timestamp": "2025-01-15T10:30:00Z",
+      "form_id": "jotform_form_id",
+      "submission_id": "jotform_submission_id",
+      "data": {
+        "customer_name": "John Doe",
+        "customer_email": "john.doe@example.com",
+        "complaint_category": "technical",
+        "complaint_description": "I'm unable to log into my account. The system keeps saying my password is incorrect even though I'm sure it's right. I've tried resetting it twice but still can't get in."
+      }
+    }
+  },
+  
+  "status_check_payload": {
+    "description": "Payload sent when user checks complaint status",
+    "endpoint": "/api/webhook/complaint",
+    "method": "POST", 
+    "headers": {
+      "Content-Type": "application/json",
+      "X-JotForm-Webhook": "complaint-chatbot"
+    },
+    "payload": {
+      "action": "status_check",
+      "timestamp": "2025-01-15T10:35:00Z",
+      "form_id": "jotform_form_id",
+      "submission_id": "jotform_submission_id",
+      "data": {
+        "status_query": "TKT-2025-001"
+      }
+    }
+  },
+  
+  "intent_recognition_payload": {
+    "description": "Payload sent when user types free text for intent recognition",
+    "endpoint": "/api/webhook/complaint",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json", 
+      "X-JotForm-Webhook": "complaint-chatbot"
+    },
+    "payload": {
+      "action": "intent_recognition",
+      "timestamp": "2025-01-15T10:32:00Z",
+      "form_id": "jotform_form_id",
+      "submission_id": "jotform_submission_id",
+      "data": {
+        "user_text": "I want to check the status of my complaint"
+      }
+    }
+  },
+  
+  "expected_responses": {
+    "new_complaint_response": {
+      "description": "Expected response format for new complaint submissions",
+      "format": {
+        "success": true,
+        "message": "Your request has been logged. Agent Anaya will be available in approximately 12 minutes.",
+        "data": {
+          "ticket_id": "TKT-2025-001",
+          "assigned_agent": "Anaya",
+          "eta_minutes": 12,
+          "priority": "medium",
+          "category": "technical"
+        }
+      }
+    },
+    
+    "status_check_response": {
+      "description": "Expected response format for status check requests",
+      "format": {
+        "success": true,
+        "message": "Status retrieved successfully",
+        "data": {
+          "ticket_status": "In Progress",
+          "last_updated": "2025-01-15T10:30:00Z",
+          "assigned_agent": "Anaya",
+          "status_notes": "Agent is currently reviewing your login issue and will contact you shortly."
+        }
+      }
+    },
+    
+    "intent_recognition_response": {
+      "description": "Expected response format for intent recognition",
+      "format": {
+        "success": true,
+        "message": "Intent recognized successfully",
+        "data": {
+          "recognized_intent": "status_check",
+          "confidence": 0.95,
+          "suggested_action": "redirect_to_status_check"
+        }
+      }
+    },
+    
+    "error_response": {
+      "description": "Expected response format for errors",
+      "format": {
+        "success": false,
+        "error": "validation_error",
+        "message": "Please check your input and try again.",
+        "show_retry": true,
+        "retry_after": 30
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "ZER0-2025-001": {
+    "id": "ZER0-2025-001",
+    "customer_name": "NK",
+    "customer_email": "99220041253@klu.ac.in",
+    "category": "General Assistance",
+    "description": "nn",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07T01:17:10.045706",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  },
+  "ZER0-2025-002": {
+    "id": "ZER0-2025-002",
+    "customer_name": "Storage Test User",
+    "customer_email": "test@example.com",
+    "category": "Technical Help & Troubleshooting",
+    "description": "This is a test ticket to verify persistent storage functionality.",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07 01:20:49",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  },
+  "ZER0-2025-003": {
+    "id": "ZER0-2025-003",
+    "customer_name": "Navadeep",
+    "customer_email": "99220041253@klu.ac.in",
+    "category": "Technical Help & Troubleshooting",
+    "description": "NNa",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07T01:38:03.609005",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  },
+  "ZER0-2025-004": {
+    "id": "ZER0-2025-004",
+    "customer_name": "nm",
+    "customer_email": "99220041246@klu.ac.in",
+    "category": "Returns, Cancellations & Swaps",
+    "description": "n",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07T01:42:56.939493",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  },
+  "ZER0-2025-005": {
+    "id": "ZER0-2025-005",
+    "customer_name": "nk",
+    "customer_email": "99220041400@klu.ac.in",
+    "category": "General Assistance",
+    "description": "Whatebrhjf",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07T02:19:27.060252",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  },
+  "ZER0-2025-006": {
+    "id": "ZER0-2025-006",
+    "customer_name": "nk",
+    "customer_email": "99220041400@klu.ac.in",
+    "category": "Technical Help & Troubleshooting",
+    "description": "nhhh",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07T02:20:51.402309",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  },
+  "ZER0-2025-007": {
+    "id": "ZER0-2025-007",
+    "customer_name": "santhosh",
+    "customer_email": "santhoshmanda259@gmail.com",
+    "category": "Billing & Account Questions",
+    "description": "my billing date is expired and i want to claim my warrent",
+    "status": "registered",
+    "priority": "medium",
+    "created_at": "2025-08-07T02:50:43.473569",
+    "assigned_agent": "Anaya",
+    "eta_minutes": 45
+  }
+}

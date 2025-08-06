@@ -1,0 +1,357 @@
+{
+  "formTitle": "Prashna - Zer0 Customer Support",
+  "formDescription": "Welcome to Zer0 Customer Care - Your trusted partner in customer satisfaction",
+  "conversationFlow": {
+    "welcome": {
+      "id": "welcome",
+      "type": "message",
+      "content": "Hi! 👋 Welcome to Zer0 Customer Support! I'm Prashna, your friendly digital assistant. I'm here to help with all your customer care needs. How can I assist you today?",
+      "buttons": [
+        {
+          "text": "New Complaint",
+          "action": "goto",
+          "target": "new_complaint_start"
+        },
+        {
+          "text": "Check Status",
+          "action": "goto", 
+          "target": "status_check"
+        },
+        {
+          "text": "FAQ",
+          "action": "goto",
+          "target": "faq_menu"
+        }
+      ],
+      "allowTextInput": true,
+      "textInputPlaceholder": "Or type your message here...",
+      "textInputAction": "process_intent"
+    },
+    
+    "new_complaint_start": {
+      "id": "new_complaint_start",
+      "type": "message",
+      "content": "I'll be happy to help you with your concern! As your Zer0 Customer Care assistant, let me gather some details so I can provide you with the best possible support.",
+      "next": "collect_name"
+    },
+    
+    "collect_name": {
+      "id": "collect_name",
+      "type": "input",
+      "inputType": "text",
+      "question": "What's your full name?",
+      "fieldName": "customer_name",
+      "required": true,
+      "validation": {
+        "minLength": 2,
+        "pattern": "^[a-zA-Z\\s]+$"
+      },
+      "next": "collect_email"
+    },
+    
+    "collect_email": {
+      "id": "collect_email", 
+      "type": "input",
+      "inputType": "email",
+      "question": "What's your email address?",
+      "fieldName": "customer_email",
+      "required": true,
+      "validation": {
+        "pattern": "^[^@]+@[^@]+\\.[^@]+$"
+      },
+      "next": "select_category"
+    },
+    
+    "select_category": {
+      "id": "select_category",
+      "type": "choice",
+      "question": "What type of issue are you experiencing?",
+      "fieldName": "complaint_category",
+      "required": true,
+      "options": [
+        {
+          "text": "Technical Help & Troubleshooting",
+          "value": "technical"
+        },
+        {
+          "text": "Warranty & Repairs", 
+          "value": "warranty"
+        },
+        {
+          "text": "Billing & Account Questions",
+          "value": "billing"
+        },
+        {
+          "text": "Product Setup & Software",
+          "value": "setup"
+        },
+        {
+          "text": "Returns, Cancellations & Swaps",
+          "value": "returns"
+        },
+        {
+          "text": "Shipping & Delivery",
+          "value": "shipping"
+        },
+        {
+          "text": "General Assistance",
+          "value": "general"
+        }
+      ],
+      "next": "collect_description"
+    },
+    
+    "collect_description": {
+      "id": "collect_description",
+      "type": "input",
+      "inputType": "textarea",
+      "question": "Please describe your issue in detail. The more information you provide, the better we can help you.",
+      "fieldName": "complaint_description",
+      "required": true,
+      "validation": {
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "next": "confirm_submission"
+    },
+    
+    "confirm_submission": {
+      "id": "confirm_submission",
+      "type": "message",
+      "content": "Thanks! Let me review your information:\\n\\n**Name:** {customer_name}\\n**Email:** {customer_email}\\n**Category:** {complaint_category}\\n**Description:** {complaint_description}\\n\\nIs this information correct?",
+      "buttons": [
+        {
+          "text": "Yes, Submit",
+          "action": "submit",
+          "target": "processing"
+        },
+        {
+          "text": "Edit Information",
+          "action": "goto",
+          "target": "collect_name"
+        }
+      ]
+    },
+    
+    "processing": {
+      "id": "processing",
+      "type": "message",
+      "content": "Processing your complaint... Please wait a moment.",
+      "showLoader": true,
+      "webhookTrigger": true,
+      "next": "submission_result"
+    },
+    
+    "submission_result": {
+      "id": "submission_result",
+      "type": "message",
+      "content": "Perfect! Your request has been logged with Zer0 Customer Care! ✅\\n\\n**Ticket ID:** {ticket_id}\\n**Assigned Agent:** {assigned_agent}\\n**Expected Response:** Live agent call within 1 hour or ETA provided\\n\\nFor urgent issues, our live agents may call back within 30 minutes. You'll also receive email updates within 4 hours. Is there anything else I can help you with today?",
+      "buttons": [
+        {
+          "text": "Check Status",
+          "action": "goto",
+          "target": "status_check"
+        },
+        {
+          "text": "New Complaint",
+          "action": "goto", 
+          "target": "new_complaint_start"
+        },
+        {
+          "text": "Done",
+          "action": "end"
+        }
+      ]
+    },
+    
+    "status_check": {
+      "id": "status_check",
+      "type": "input",
+      "inputType": "text",
+      "question": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
+      "fieldName": "status_query",
+      "required": true,
+      "next": "status_processing"
+    },
+    
+    "status_processing": {
+      "id": "status_processing",
+      "type": "message",
+      "content": "Looking up your complaint status... Please wait.",
+      "showLoader": true,
+      "webhookTrigger": true,
+      "webhookAction": "status_check",
+      "next": "status_result"
+    },
+    
+    "status_result": {
+      "id": "status_result",
+      "type": "message",
+      "content": "**Ticket Status:** {ticket_status}\\n**Last Updated:** {last_updated}\\n**Assigned Agent:** {assigned_agent}\\n**Current Notes:** {status_notes}\\n\\nAnything else I can help you with?",
+      "buttons": [
+        {
+          "text": "New Complaint",
+          "action": "goto",
+          "target": "new_complaint_start"
+        },
+        {
+          "text": "FAQ",
+          "action": "goto",
+          "target": "faq_menu"
+        },
+        {
+          "text": "Done",
+          "action": "end"
+        }
+      ]
+    },
+    
+    "faq_menu": {
+      "id": "faq_menu",
+      "type": "choice",
+      "question": "What would you like to know more about?",
+      "fieldName": "faq_topic",
+      "options": [
+        {
+          "text": "Response times & resolution commitments",
+          "value": "resolution_time"
+        },
+        {
+          "text": "How to track my support request",
+          "value": "tracking"
+        },
+        {
+          "text": "What information should I provide?",
+          "value": "required_info"
+        },
+        {
+          "text": "Escalation process for urgent issues",
+          "value": "escalation"
+        },
+        {
+          "text": "Contact options & business hours",
+          "value": "contact"
+        },
+        {
+          "text": "Warranty terms & policies",
+          "value": "warranty_info"
+        },
+        {
+          "text": "Returns, cancellations & swaps",
+          "value": "returns_info"
+        }
+      ],
+      "next": "faq_answer"
+    },
+    
+    "faq_answer": {
+      "id": "faq_answer",
+      "type": "message",
+      "content": "{faq_content}",
+      "buttons": [
+        {
+          "text": "More FAQ",
+          "action": "goto",
+          "target": "faq_menu"
+        },
+        {
+          "text": "New Complaint",
+          "action": "goto",
+          "target": "new_complaint_start"
+        },
+        {
+          "text": "Done",
+          "action": "end"
+        }
+      ]
+    },
+    
+    "process_intent": {
+      "id": "process_intent",
+      "type": "message",
+      "content": "Let me understand what you need...",
+      "showLoader": true,
+      "webhookTrigger": true,
+      "webhookAction": "intent_recognition",
+      "next": "intent_result"
+    },
+    
+    "intent_result": {
+      "id": "intent_result",
+      "type": "message",
+      "content": "I understand you want to {recognized_intent}. Let me help you with that.",
+      "conditionalNext": {
+        "field": "recognized_intent",
+        "conditions": [
+          {
+            "value": "new_complaint",
+            "target": "new_complaint_start"
+          },
+          {
+            "value": "status_check", 
+            "target": "status_check"
+          },
+          {
+            "value": "faq",
+            "target": "faq_menu"
+          }
+        ],
+        "default": "clarification"
+      }
+    },
+    
+    "clarification": {
+      "id": "clarification",
+      "type": "message",
+      "content": "I'm not sure I understood that correctly. Could you please choose one of these options?",
+      "buttons": [
+        {
+          "text": "New Complaint",
+          "action": "goto",
+          "target": "new_complaint_start"
+        },
+        {
+          "text": "Check Status",
+          "action": "goto",
+          "target": "status_check"
+        },
+        {
+          "text": "FAQ",
+          "action": "goto",
+          "target": "faq_menu"
+        }
+      ]
+    }
+  },
+  
+  "webhookSettings": {
+    "url": "https://zer0-support.com/api/webhook/complaint",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "X-JotForm-Webhook": "prashna-zer0-support"
+    },
+    "retryAttempts": 3,
+    "timeout": 10000
+  },
+  
+  "styling": {
+    "primaryColor": "#1a365d",
+    "secondaryColor": "#2d3748",
+    "backgroundColor": "#f7fafc", 
+    "fontFamily": "Inter, Arial, sans-serif",
+    "borderRadius": "12px",
+    "buttonStyle": "rounded",
+    "showProgressBar": true,
+    "chatBubbleStyle": "modern",
+    "brandLogo": "zer0-logo.png"
+  },
+  
+  "settings": {
+    "allowBack": true,
+    "showProgressIndicator": true,
+    "autoSave": true,
+    "thankYouMessage": "Thank you for choosing Zer0 Customer Care! We're committed to exceeding your expectations and will be in touch soon.",
+    "errorMessage": "I apologize for the technical difficulty. Please try again, or I can connect you with a live agent right away."
+  }
+}

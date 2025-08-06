@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashna - Zer0 Customer Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 400px;
+            height: 600px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #1a365d, #2d3748);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .bot-avatar {
+            width: 50px;
+            height: 50px;
+            background: #4299e1;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .chat-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .chat-subtitle {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f7fafc;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.bot {
+            text-align: left;
+        }
+
+        .message.user {
+            text-align: right;
+        }
+
+        .message-bubble {
+            display: inline-block;
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .message.bot .message-bubble {
+            background: white;
+            color: #2d3748;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .message.user .message-bubble {
+            background: #4299e1;
+            color: white;
+        }
+
+        .message-buttons {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #4299e1;
+            border: 1px solid #4299e1;
+        }
+
+        .btn-outline:hover {
+            background: #4299e1;
+            color: white;
+        }
+
+        .chat-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .message-input:focus {
+            border-color: #4299e1;
+        }
+
+        .send-btn {
+            width: 45px;
+            height: 45px;
+            background: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .send-btn:hover {
+            background: #3182ce;
+            transform: scale(1.05);
+        }
+
+        .send-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px 16px;
+            background: white;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            max-width: 80px;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #a0aec0;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            background: #48bb78;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        @media (max-width: 480px) {
+            .chat-container {
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="status-indicator"></div>
+            <div class="bot-avatar">🤖</div>
+            <div class="chat-title">Prashna AI</div>
+            <div class="chat-subtitle">Zer0 Customer Support</div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here dynamically -->
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <div class="input-group">
+                <input type="text" class="message-input" id="messageInput" placeholder="Type your message here..."
+                    onkeypress="handleKeyPress(event)">
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sessionId = null;
+        let currentStep = null;
+        let complaintData = {};
+
+        // Initialize chat
+        document.addEventListener('DOMContentLoaded', function () {
+            // Generate session ID
+            sessionId = 'session-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+
+            // Check for JotForm referral
+            const urlParams = new URLSearchParams(window.location.search);
+            const referralSource = urlParams.get('ref') || '';
+
+            // Send initial greeting with referral info
+            sendMessage('hello', true, referralSource);
+        });
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage(message = null, isInitial = false, referralSource = '') {
+            const messageInput = document.getElementById('messageInput');
+            const sendBtn = document.getElementById('sendBtn');
+
+            const userMessage = message || messageInput.value.trim();
+            if (!userMessage && !isInitial) return;
+
+            // Disable input while processing
+            messageInput.disabled = true;
+            sendBtn.disabled = true;
+
+            // Add user message to chat (except for initial greeting)
+            if (!isInitial) {
+                addMessage(userMessage, 'user');
+                messageInput.value = '';
+            }
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: userMessage,
+                        session_id: sessionId,
+                        referral_source: referralSource
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    sessionId = data.session_id;
+                    hideTypingIndicator();
+
+                    // Add bot response
+                    addBotMessage(data.response);
+                } else {
+                    hideTypingIndicator();
+                    addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                hideTypingIndicator();
+                addMessage('Connection error. Please check your internet and try again.', 'bot');
+            }
+
+            // Re-enable input
+            messageInput.disabled = false;
+            sendBtn.disabled = false;
+            messageInput.focus();
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.innerHTML = marked.parse(text);
+
+            messageDiv.appendChild(bubbleDiv);
+            messagesContainer.appendChild(messageDiv);
+
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function addBotMessage(response) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot';
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.innerHTML = marked.parse(response.message);
+
+            messageDiv.appendChild(bubbleDiv);
+
+            // Add buttons if present
+            if (response.buttons) {
+                const buttonsDiv = document.createElement('div');
+                buttonsDiv.className = 'message-buttons';
+
+                response.buttons.forEach(button => {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn btn-outline';
+                    btn.textContent = button.text;
+                    btn.onclick = () => handleButtonClick(button.action, button.text);
+                    buttonsDiv.appendChild(btn);
+                });
+
+                messageDiv.appendChild(buttonsDiv);
+            }
+
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Store current step for multi-step flows
+            if (response.next_step) {
+                currentStep = response.next_step;
+            }
+        }
+
+        function handleButtonClick(action, buttonText) {
+            // Add user's choice as a message
+            addMessage(buttonText, 'user');
+
+            // Process the action
+            if (action === 'new_complaint') {
+                sendMessage('I need help with a complaint', true);
+            } else if (action === 'status_check') {
+                sendMessage('I want to check my ticket status', true);
+            } else if (action === 'faq') {
+                sendMessage('I have questions', true);
+            } else if (action.startsWith('faq_')) {
+                // Send the action itself for FAQ responses
+                sendMessage(action, true);
+            } else if (action.startsWith('category_')) {
+                // Send the action itself for category selection
+                sendMessage(action, true);
+            } else if (action === 'priority_complaint' || action === 'urgent_complaint' || action === 'technical_complaint') {
+                // Handle priority complaints from JotForm referrals
+                sendMessage('I need help with a complaint', true);
+            } else {
+                // Default: send the button text
+                sendMessage(buttonText, true);
+            }
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'block';
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+
+        // Handle complaint form submission (will be enhanced later)
+        async function submitComplaint(data) {
+            try {
+                const response = await fetch('/api/complaint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    const successMessage = `${result.message}\n\n` +
+                        `**Ticket ID:** ${result.ticket_id}\n` +
+                        `**Assigned Agent:** ${result.assigned_agent}\n` +
+                        `**Expected Response:** Live agent call within 1 hour`;
+
+                    addMessage(successMessage, 'bot');
+                } else {
+                    addMessage('Failed to create complaint. Please try again.', 'bot');
+                }
+            } catch (error) {
+                console.error('Error submitting complaint:', error);
+                addMessage('Connection error. Please try again.', 'bot');
+            }
+        }
+    </script>
+</body>
+
+</html>
