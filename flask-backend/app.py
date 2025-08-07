@@ -9,6 +9,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
+import joblib
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -91,12 +92,12 @@ def load_ml_models():
     try:
         # Load customer service categorization model
         with open('models/customer_service_model.pkl', 'rb') as f:
-            models['categorization'] = pickle.load(f)
+            models['categorization'] = joblib.load(f)
         logger.info("✅ Customer service categorization model loaded")
         
         # Load support severity classifier model
         with open('models/support_severity_classifier.pkl', 'rb') as f:
-            models['priority'] = pickle.load(f)
+            models['priority'] = joblib.load(f)
         logger.info("✅ Support severity classifier model loaded")
         
     except Exception as e:

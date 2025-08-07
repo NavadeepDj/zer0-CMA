@@ -1,0 +1,121 @@
+{
+  "alex_tech": {
+    "id": "alex_tech",
+    "name": "Alex",
+    "title": "Technical Specialist",
+    "specialties": [
+      "Technical Help & Troubleshooting",
+      "Product Setup & Software"
+    ],
+    "status": "available",
+    "current_ticket": "ZER0-2025-009",
+    "estimated_free_time": "2025-08-07T05:26:46.387938",
+    "max_concurrent_tickets": 3,
+    "current_tickets": [
+      "ZER0-2025-009",
+      "ZER0-2025-015"
+    ],
+    "avg_resolution_time": 25,
+    "last_activity": "2025-08-07T05:01:46.387993"
+  },
+  "sarah_warranty": {
+    "id": "sarah_warranty",
+    "name": "Sarah",
+    "title": "Warranty Expert",
+    "specialties": [
+      "Warranty & Repairs"
+    ],
+    "status": "available",
+    "current_ticket": null,
+    "estimated_free_time": null,
+    "max_concurrent_tickets": 2,
+    "current_tickets": [],
+    "avg_resolution_time": 35,
+    "last_activity": "2025-08-07T04:17:45.124506"
+  },
+  "mike_billing": {
+    "id": "mike_billing",
+    "name": "Mike",
+    "title": "Billing Specialist",
+    "specialties": [
+      "Billing & Account Questions"
+    ],
+    "status": "available",
+    "current_ticket": null,
+    "estimated_free_time": null,
+    "max_concurrent_tickets": 4,
+    "current_tickets": [],
+    "avg_resolution_time": 20,
+    "last_activity": "2025-08-07T05:20:22.540242"
+  },
+  "lisa_setup": {
+    "id": "lisa_setup",
+    "name": "Lisa",
+    "title": "Setup Specialist",
+    "specialties": [
+      "Product Setup & Software"
+    ],
+    "status": "busy",
+    "current_ticket": null,
+    "estimated_free_time": "2025-08-07T06:20:06.180573",
+    "max_concurrent_tickets": 3,
+    "current_tickets": [
+      "ZER0-2025-001"
+    ],
+    "avg_resolution_time": 30,
+    "last_activity": "2025-08-07T05:20:05.939191"
+  },
+  "david_returns": {
+    "id": "david_returns",
+    "name": "David",
+    "title": "Returns Manager",
+    "specialties": [
+      "Returns, Cancellations & Swaps"
+    ],
+    "status": "available",
+    "current_ticket": "ZER0-2025-012",
+    "estimated_free_time": "2025-08-07T04:57:05.778292",
+    "max_concurrent_tickets": 3,
+    "current_tickets": [
+      "ZER0-2025-008",
+      "ZER0-2025-012"
+    ],
+    "avg_resolution_time": 15,
+    "last_activity": "2025-08-07T04:42:05.778332"
+  },
+  "emma_logistics": {
+    "id": "emma_logistics",
+    "name": "Emma",
+    "title": "Logistics Coordinator",
+    "specialties": [
+      "Shipping & Delivery"
+    ],
+    "status": "offline",
+    "current_ticket": null,
+    "estimated_free_time": "2025-08-07T06:17:45.124532",
+    "max_concurrent_tickets": 2,
+    "current_tickets": [],
+    "avg_resolution_time": 25,
+    "last_activity": "2025-08-07T03:17:45.124538"
+  },
+  "anaya_general": {
+    "id": "anaya_general",
+    "name": "Anaya",
+    "title": "General Support",
+    "specialties": [
+      "General Assistance"
+    ],
+    "status": "available",
+    "current_ticket": "ZER0-2025-010",
+    "estimated_free_time": "2025-08-07T05:20:11.983167",
+    "max_concurrent_tickets": 5,
+    "current_tickets": [
+      "ZER0-2025-010",
+      "ZER0-2025-011",
+      "ZER0-2025-013",
+      "ZER0-2025-014"
+    ],
+    "avg_resolution_time": 20,
+    "last_activity": "2025-08-07T05:00:11.983214"
+  }
+}
