@@ -1,0 +1,20 @@
+{
+  "QrJ79lN3YRVYPDUMHhMsjYuQRRZ2": {
+    "firebase_uid": "QrJ79lN3YRVYPDUMHhMsjYuQRRZ2",
+    "email": "admin@zer0.com",
+    "display_name": null,
+    "role": "customer",
+    "created_at": "2025-08-07T08:28:18.929353",
+    "last_login": "2025-08-07T08:50:52.531012",
+    "is_active": true
+  },
+  "IPypsk5Mk3cnpJuDiK5lZlhKbsf1": {
+    "firebase_uid": "IPypsk5Mk3cnpJuDiK5lZlhKbsf1",
+    "email": "customer@test.com",
+    "display_name": null,
+    "role": "customer",
+    "created_at": "2025-08-07T08:30:31.379978",
+    "last_login": "2025-08-07T08:44:08.372745",
+    "is_active": true
+  }
+}

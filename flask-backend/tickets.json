@@ -1,206 +1,161 @@
 {
   "ZER0-2025-001": {
     "id": "ZER0-2025-001",
-    "customer_name": "NK",
+    "customer_name": "nn",
     "customer_email": "99220041253@klu.ac.in",
-    "category": "General Assistance",
-    "description": "nn",
+    "category": "Billing & Account Questions",
+    "user_selected_category": "Need to return",
+    "description": "Just give me info",
     "status": "registered",
     "priority": "medium",
-    "created_at": "2025-08-07T01:17:10.045706",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
+    "created_at": "2025-08-07T07:31:46.552535",
+    "assigned_agent": "Mike (Billing Specialist)",
+    "assigned_agent_id": "mike_billing",
+    "eta_minutes": 2,
+    "ai_processed": true
   },
   "ZER0-2025-002": {
     "id": "ZER0-2025-002",
-    "customer_name": "Storage Test User",
-    "customer_email": "test@example.com",
+    "customer_name": "nk",
+    "customer_email": "99220041253@klu.ac.in",
     "category": "Technical Help & Troubleshooting",
-    "description": "This is a test ticket to verify persistent storage functionality.",
-    "status": "registered",
+    "user_selected_category": "My laptop is looking good",
+    "description": "It is good",
+    "status": "closed",
     "priority": "medium",
-    "created_at": "2025-08-07 01:20:49",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
+    "created_at": "2025-08-07T07:43:20.358001",
+    "assigned_agent": "Alex (Technical Specialist)",
+    "assigned_agent_id": "alex_tech",
+    "eta_minutes": 2,
+    "ai_processed": true,
+    "updated_at": "2025-08-07T09:18:15.081730",
+    "updated_by": "agent",
+    "status_history": [
+      {
+        "status": "closed",
+        "timestamp": "2025-08-07T09:18:10.955733",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "closed",
+        "timestamp": "2025-08-07T09:18:14.555026",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "closed",
+        "timestamp": "2025-08-07T09:18:15.081748",
+        "updated_by": "agent",
+        "notes": ""
+      }
+    ]
   },
   "ZER0-2025-003": {
     "id": "ZER0-2025-003",
-    "customer_name": "Navadeep",
-    "customer_email": "99220041253@klu.ac.in",
+    "customer_name": "Nava",
+    "customer_email": "99220040115@klu.ac.in",
     "category": "Technical Help & Troubleshooting",
-    "description": "NNa",
+    "user_selected_category": "Need warranty check",
+    "description": "Not important",
     "status": "registered",
     "priority": "medium",
-    "created_at": "2025-08-07T01:38:03.609005",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
+    "created_at": "2025-08-07T07:59:00.467407",
+    "assigned_agent": "Alex (Technical Specialist)",
+    "assigned_agent_id": "alex_tech",
+    "eta_minutes": 2,
+    "ai_processed": true
   },
   "ZER0-2025-004": {
     "id": "ZER0-2025-004",
-    "customer_name": "nm",
-    "customer_email": "99220041246@klu.ac.in",
-    "category": "Returns, Cancellations & Swaps",
-    "description": "n",
-    "status": "registered",
+    "customer_name": "nak",
+    "customer_email": "99220041400@klu.ac.in",
+    "category": "Technical Help & Troubleshooting",
+    "user_selected_category": "General Assistance",
+    "description": "general",
+    "status": "closed",
     "priority": "medium",
-    "created_at": "2025-08-07T01:42:56.939493",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
+    "created_at": "2025-08-07T08:01:26.602284",
+    "assigned_agent": "Alex (Technical Specialist)",
+    "assigned_agent_id": "alex_tech",
+    "eta_minutes": 2,
+    "ai_processed": true,
+    "updated_at": "2025-08-07T09:17:43.355080",
+    "updated_by": "agent",
+    "status_history": [
+      {
+        "status": "assigned",
+        "timestamp": "2025-08-07T09:17:39.178051",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "in-progress",
+        "timestamp": "2025-08-07T09:17:40.109686",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "resolved",
+        "timestamp": "2025-08-07T09:17:40.677418",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "closed",
+        "timestamp": "2025-08-07T09:17:41.764735",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "closed",
+        "timestamp": "2025-08-07T09:17:43.355161",
+        "updated_by": "agent",
+        "notes": ""
+      }
+    ]
   },
   "ZER0-2025-005": {
     "id": "ZER0-2025-005",
-    "customer_name": "nk",
-    "customer_email": "99220041400@klu.ac.in",
-    "category": "General Assistance",
-    "description": "Whatebrhjf",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T02:19:27.060252",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
-  },
-  "ZER0-2025-006": {
-    "id": "ZER0-2025-006",
-    "customer_name": "nk",
+    "customer_name": "mak",
     "customer_email": "99220041400@klu.ac.in",
     "category": "Technical Help & Troubleshooting",
-    "description": "nhhh",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T02:20:51.402309",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
-  },
-  "ZER0-2025-007": {
-    "id": "ZER0-2025-007",
-    "customer_name": "santhosh",
-    "customer_email": "santhoshmanda259@gmail.com",
-    "category": "Billing & Account Questions",
-    "description": "my billing date is expired and i want to claim my warrent",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T02:50:43.473569",
-    "assigned_agent": "Anaya",
-    "eta_minutes": 45
-  },
-  "ZER0-2025-008": {
-    "id": "ZER0-2025-008",
-    "customer_name": "Nk",
-    "customer_email": "99220041253@klu.ac.in",
-    "category": "Returns, Cancellations & Swaps",
-    "user_selected_category": "Returns, Cancellations & Swaps",
-    "description": ",,ss",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T04:18:09.639609",
-    "assigned_agent": "David (Returns Manager)",
-    "assigned_agent_id": "david_returns",
-    "eta_minutes": 2,
-    "ai_processed": false
-  },
-  "ZER0-2025-009": {
-    "id": "ZER0-2025-009",
-    "customer_name": "nk",
-    "customer_email": "99220041253@klu.ac.in",
-    "category": "Product Setup & Software",
-    "user_selected_category": "Product Setup & Software",
-    "description": "mm\\\\",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T04:22:05.063575",
-    "assigned_agent": "Alex (Technical Specialist)",
-    "assigned_agent_id": "alex_tech",
-    "eta_minutes": 2,
-    "ai_processed": false
-  },
-  "ZER0-2025-010": {
-    "id": "ZER0-2025-010",
-    "customer_name": "Nk",
-    "customer_email": "99220041253@klu.ac.in",
-    "category": "General Assistance",
     "user_selected_category": "General Assistance",
-    "description": "nn",
-    "status": "registered",
+    "description": "general",
+    "status": "closed",
     "priority": "medium",
-    "created_at": "2025-08-07T04:23:37.390757",
+    "created_at": "2025-08-07T08:02:22.223799",
     "assigned_agent": "Anaya (General Support)",
     "assigned_agent_id": "anaya_general",
     "eta_minutes": 2,
-    "ai_processed": false
-  },
-  "ZER0-2025-011": {
-    "id": "ZER0-2025-011",
-    "customer_name": "nkkk",
-    "customer_email": "99220041253@klu.ac.in",
-    "category": "Returns, Cancellations & Swaps",
-    "user_selected_category": "Returns, Cancellations & Swaps",
-    "description": "kkss",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T04:24:36.429862",
-    "assigned_agent": "Anaya (General Support)",
-    "assigned_agent_id": "anaya_general",
-    "eta_minutes": 2,
-    "ai_processed": false
-  },
-  "ZER0-2025-012": {
-    "id": "ZER0-2025-012",
-    "customer_name": "nklll",
-    "customer_email": "99220041253@klu.ac.in",
-    "category": "Returns, Cancellations & Swaps",
-    "user_selected_category": "Returns, Cancellations & Swaps",
-    "description": "mm",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T04:42:05.773492",
-    "assigned_agent": "David (Returns Manager)",
-    "assigned_agent_id": "david_returns",
-    "eta_minutes": 2,
-    "ai_processed": false
-  },
-  "ZER0-2025-013": {
-    "id": "ZER0-2025-013",
-    "customer_name": "nkm",
-    "customer_email": "99220041246@klu.ac.in",
-    "category": "I want  to return my laptop and cancel the order",
-    "user_selected_category": "I want  to return my laptop and cancel the order",
-    "description": "Thats it",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T04:43:14.989844",
-    "assigned_agent": "Anaya (General Support)",
-    "assigned_agent_id": "anaya_general",
-    "eta_minutes": 2,
-    "ai_processed": false
-  },
-  "ZER0-2025-014": {
-    "id": "ZER0-2025-014",
-    "customer_name": "kkk",
-    "customer_email": "99220041246@klu.ac.in",
-    "category": "sales",
-    "user_selected_category": "Returns, Cancellations & Swaps",
-    "description": "So, basically, i need to return my product",
-    "status": "registered",
-    "priority": "low",
-    "created_at": "2025-08-07T05:00:11.978827",
-    "assigned_agent": "Anaya (General Support)",
-    "assigned_agent_id": "anaya_general",
-    "eta_minutes": 2,
-    "ai_processed": true
-  },
-  "ZER0-2025-015": {
-    "id": "ZER0-2025-015",
-    "customer_name": "kmm",
-    "customer_email": "99220041253@klu.ac.in",
-    "category": "Technical Help & Troubleshooting",
-    "user_selected_category": "I want to know about how to install vs code in my laptop",
-    "description": "Tell me more about installation of vscode in my laptop",
-    "status": "registered",
-    "priority": "medium",
-    "created_at": "2025-08-07T05:01:46.381300",
-    "assigned_agent": "Alex (Technical Specialist)",
-    "assigned_agent_id": "alex_tech",
-    "eta_minutes": 2,
-    "ai_processed": true
+    "ai_processed": true,
+    "updated_at": "2025-08-07T09:09:35.994403",
+    "updated_by": "agent",
+    "status_history": [
+      {
+        "status": "assigned",
+        "timestamp": "2025-08-07T09:09:24.025211",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "in-progress",
+        "timestamp": "2025-08-07T09:09:32.103186",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "resolved",
+        "timestamp": "2025-08-07T09:09:34.321087",
+        "updated_by": "agent",
+        "notes": ""
+      },
+      {
+        "status": "closed",
+        "timestamp": "2025-08-07T09:09:35.994470",
+        "updated_by": "agent",
+        "notes": ""
+      }
+    ]
   }
 }

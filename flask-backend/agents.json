@@ -7,16 +7,17 @@
       "Technical Help & Troubleshooting",
       "Product Setup & Software"
     ],
-    "status": "available",
-    "current_ticket": "ZER0-2025-009",
-    "estimated_free_time": "2025-08-07T05:26:46.387938",
+    "status": "busy",
+    "current_ticket": "ZER0-2025-002",
+    "estimated_free_time": "2025-08-07T08:26:26.610927",
     "max_concurrent_tickets": 3,
     "current_tickets": [
-      "ZER0-2025-009",
-      "ZER0-2025-015"
+      "ZER0-2025-002",
+      "ZER0-2025-003",
+      "ZER0-2025-004"
     ],
     "avg_resolution_time": 25,
-    "last_activity": "2025-08-07T05:01:46.387993"
+    "last_activity": "2025-08-07T08:01:26.610972"
   },
   "sarah_warranty": {
     "id": "sarah_warranty",
@@ -25,13 +26,13 @@
     "specialties": [
       "Warranty & Repairs"
     ],
-    "status": "available",
+    "status": "offline",
     "current_ticket": null,
-    "estimated_free_time": null,
+    "estimated_free_time": "2025-08-07T10:00:46.158701",
     "max_concurrent_tickets": 2,
     "current_tickets": [],
     "avg_resolution_time": 35,
-    "last_activity": "2025-08-07T04:17:45.124506"
+    "last_activity": "2025-08-07T08:00:46.158687"
   },
   "mike_billing": {
     "id": "mike_billing",
@@ -44,9 +45,11 @@
     "current_ticket": null,
     "estimated_free_time": null,
     "max_concurrent_tickets": 4,
-    "current_tickets": [],
+    "current_tickets": [
+      "ZER0-2025-001"
+    ],
     "avg_resolution_time": 20,
-    "last_activity": "2025-08-07T05:20:22.540242"
+    "last_activity": "2025-08-07T08:05:16.673034"
   },
   "lisa_setup": {
     "id": "lisa_setup",
@@ -55,15 +58,15 @@
     "specialties": [
       "Product Setup & Software"
     ],
-    "status": "busy",
-    "current_ticket": null,
-    "estimated_free_time": "2025-08-07T06:20:06.180573",
+    "status": "offline",
+    "current_ticket": "ZER0-2025-001",
+    "estimated_free_time": "2025-08-07T10:00:43.142853",
     "max_concurrent_tickets": 3,
     "current_tickets": [
       "ZER0-2025-001"
     ],
     "avg_resolution_time": 30,
-    "last_activity": "2025-08-07T05:20:05.939191"
+    "last_activity": "2025-08-07T08:00:43.142838"
   },
   "david_returns": {
     "id": "david_returns",
@@ -72,16 +75,13 @@
     "specialties": [
       "Returns, Cancellations & Swaps"
     ],
-    "status": "available",
-    "current_ticket": "ZER0-2025-012",
-    "estimated_free_time": "2025-08-07T04:57:05.778292",
+    "status": "offline",
+    "current_ticket": null,
+    "estimated_free_time": "2025-08-07T10:00:41.144615",
     "max_concurrent_tickets": 3,
-    "current_tickets": [
-      "ZER0-2025-008",
-      "ZER0-2025-012"
-    ],
+    "current_tickets": [],
     "avg_resolution_time": 15,
-    "last_activity": "2025-08-07T04:42:05.778332"
+    "last_activity": "2025-08-07T08:00:41.144598"
   },
   "emma_logistics": {
     "id": "emma_logistics",
@@ -92,11 +92,11 @@
     ],
     "status": "offline",
     "current_ticket": null,
-    "estimated_free_time": "2025-08-07T06:17:45.124532",
+    "estimated_free_time": "2025-08-07T10:00:39.160554",
     "max_concurrent_tickets": 2,
     "current_tickets": [],
     "avg_resolution_time": 25,
-    "last_activity": "2025-08-07T03:17:45.124538"
+    "last_activity": "2025-08-07T08:00:39.160538"
   },
   "anaya_general": {
     "id": "anaya_general",
@@ -106,16 +106,13 @@
       "General Assistance"
     ],
     "status": "available",
-    "current_ticket": "ZER0-2025-010",
-    "estimated_free_time": "2025-08-07T05:20:11.983167",
+    "current_ticket": "ZER0-2025-005",
+    "estimated_free_time": "2025-08-07T08:22:22.230083",
     "max_concurrent_tickets": 5,
     "current_tickets": [
-      "ZER0-2025-010",
-      "ZER0-2025-011",
-      "ZER0-2025-013",
-      "ZER0-2025-014"
+      "ZER0-2025-005"
     ],
     "avg_resolution_time": 20,
-    "last_activity": "2025-08-07T05:00:11.983214"
+    "last_activity": "2025-08-07T08:02:22.230133"
   }
 }

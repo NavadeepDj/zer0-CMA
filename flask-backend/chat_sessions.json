@@ -1,7 +1,7 @@
 {
-  "session-1754509587724-1whary5pi": [
+  "session-1754532015053-e1scj3c5q": [
     {
-      "timestamp": "2025-08-07T01:16:27.753816",
+      "timestamp": "2025-08-07T07:30:15.131929",
       "user_message": "hello",
       "bot_response": {
         "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
@@ -28,7 +28,7 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T01:16:30.228426",
+      "timestamp": "2025-08-07T07:31:28.436706",
       "user_message": "I need help with a complaint",
       "bot_response": {
         "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
@@ -38,165 +38,17 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T01:16:32.503343",
-      "user_message": "NK",
-      "bot_response": {
-        "message": "Thank you, NK! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:16:55.057103",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:16:58.760417",
-      "user_message": "category_general",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:17:18.350498",
+      "timestamp": "2025-08-07T07:31:30.224045",
       "user_message": "nn",
       "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-001\n**Assigned Agent:** Anaya\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:17:55.311198",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "input_type": "text"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:18:03.388725",
-      "user_message": "ZER0-2025-001",
-      "bot_response": {
-        "message": "\ud83c\udf1f **Welcome to Zer0 Customer Solutions!**\n\n**Our Mission:** Zer0's unwavering dedication to excellence in service delivery. Whether assisting with a simple inquiry or managing complex product challenges, Zer0 Customer Solutions strives to exceed expectations at every opportunity, reinforcing our reputation as a trusted partner in customer satisfaction and support.\n\n**What We Offer:**\nZer0 provides full-spectrum customer care services similar to HP customer support, including technical help, repairs, warranty claims, billing inquiries, product setup guidance, and general assistance.\n\n**Support Channels:**\n\u2022 Web Chat\n\u2022 Phone\n\u2022 Email\n\u2022 Whatsapp\n\n**Additional Services:**\n\u2022 Quarterly webinars and live Q&A sessions with product specialists and service managers providing Product updates, maintenance tips, and upcoming releases\n\u2022 Rewards customers who recommend Zer0 products and services\n\u2022 Focus on Building community and trust around our brand\n\nAvailable 9 AM\u20139 PM IST, seven days a week with emergency escalations outside these hours are handled on request! \ud83d\ude0a",
-        "type": "services_info",
-        "buttons": [
-          {
-            "text": "Get Support Now",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754510861356-mphnskhp0": [
-    {
-      "timestamp": "2025-08-07T01:37:41.407130",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T01:37:45.544938",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T01:37:49.943088",
-      "user_message": "Navadeep",
-      "bot_response": {
-        "message": "Thank you, Navadeep! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
+        "message": "Thank you, nn! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
         "type": "collect_info",
         "next_step": "collect_email"
-      }
+      },
+      "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T01:37:59.097319",
+      "timestamp": "2025-08-07T07:31:35.662175",
       "user_message": "99220041253@klu.ac.in",
       "bot_response": {
         "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
@@ -228,22 +80,24 @@
           }
         ],
         "next_step": "collect_category"
-      }
+      },
+      "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T01:38:00.923044",
-      "user_message": "category_technical",
+      "timestamp": "2025-08-07T07:31:40.720799",
+      "user_message": "Need to return",
       "bot_response": {
         "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
         "type": "collect_description",
         "next_step": "collect_description"
-      }
+      },
+      "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T01:38:10.784447",
-      "user_message": "NNa",
+      "timestamp": "2025-08-07T07:31:56.445936",
+      "user_message": "Just give me info",
       "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-003\n**Assigned Agent:** Anaya\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
+        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-001\n**Assigned Agent:** Mike (Billing Specialist)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
         "type": "ticket_created",
         "buttons": [
           {
@@ -263,126 +117,11 @@
             "action": "services_info"
           }
         ]
-      }
-    }
-  ],
-  "session-1754511935668-fopm8g018": [
-    {
-      "timestamp": "2025-08-07T01:55:35.679896",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754511936352-ctcd1hrk7": [
-    {
-      "timestamp": "2025-08-07T01:55:36.390119",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:55:39.679132",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "input_type": "text"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T01:55:44.707251",
-      "user_message": "ZER0-2025-001",
-      "bot_response": {
-        "message": "\ud83c\udf1f **Welcome to Zer0 Customer Solutions!**\n\n**Our Mission:** Zer0's unwavering dedication to excellence in service delivery. Whether assisting with a simple inquiry or managing complex product challenges, Zer0 Customer Solutions strives to exceed expectations at every opportunity, reinforcing our reputation as a trusted partner in customer satisfaction and support.\n\n**What We Offer:**\nZer0 provides full-spectrum customer care services similar to HP customer support, including technical help, repairs, warranty claims, billing inquiries, product setup guidance, and general assistance.\n\n**Support Channels:**\n\u2022 Web Chat\n\u2022 Phone\n\u2022 Email\n\u2022 Whatsapp\n\n**Additional Services:**\n\u2022 Quarterly webinars and live Q&A sessions with product specialists and service managers providing Product updates, maintenance tips, and upcoming releases\n\u2022 Rewards customers who recommend Zer0 products and services\n\u2022 Focus on Building community and trust around our brand\n\nAvailable 9 AM\u20139 PM IST, seven days a week with emergency escalations outside these hours are handled on request! \ud83d\ude0a",
-        "type": "services_info",
-        "buttons": [
-          {
-            "text": "Get Support Now",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754512372687-ut384k4bd": [
-    {
-      "timestamp": "2025-08-07T02:02:52.701650",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
       },
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:02:54.452588",
+      "timestamp": "2025-08-07T07:41:57.748554",
       "user_message": "I want to check my ticket status",
       "bot_response": {
         "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
@@ -392,10 +131,10 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:03:02.726132",
-      "user_message": "99220041246@klu.ac.in",
+      "timestamp": "2025-08-07T07:42:07.529773",
+      "user_message": "ZER0-2025-001",
       "bot_response": {
-        "message": "\u2705 **Ticket Found by Email!**\n\n**Ticket ID:** ZER0-2025-004\n**Status:** Registered\n**Category:** Returns, Cancellations & Swaps\n**Priority:** Medium\n**Assigned Agent:** Anaya\n**Created:** 2025-08-07T01:42:56.939493\n\n**Description:**\nn\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
+        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-001\n**Status:** Registered\n**Customer:** nn\n**Category:** Billing & Account Questions\n**Priority:** Medium\n**Assigned Agent:** Mike (Billing Specialist)\n**Created:** 2025-08-07T07:31:46.552535\n\n**Description:**\nJust give me info\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
         "type": "status_result",
         "buttons": [
           {
@@ -415,30 +154,153 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:03:27.970707",
-      "user_message": "ZER0-2025-002",
+      "timestamp": "2025-08-07T07:42:54.110807",
+      "user_message": "I need help with a complaint",
       "bot_response": {
-        "message": "\ud83c\udf1f **Welcome to Zer0 Customer Solutions!**\n\n**Our Mission:** Zer0's unwavering dedication to excellence in service delivery. Whether assisting with a simple inquiry or managing complex product challenges, Zer0 Customer Solutions strives to exceed expectations at every opportunity, reinforcing our reputation as a trusted partner in customer satisfaction and support.\n\n**What We Offer:**\nZer0 provides full-spectrum customer care services similar to HP customer support, including technical help, repairs, warranty claims, billing inquiries, product setup guidance, and general assistance.\n\n**Support Channels:**\n\u2022 Web Chat\n\u2022 Phone\n\u2022 Email\n\u2022 Whatsapp\n\n**Additional Services:**\n\u2022 Quarterly webinars and live Q&A sessions with product specialists and service managers providing Product updates, maintenance tips, and upcoming releases\n\u2022 Rewards customers who recommend Zer0 products and services\n\u2022 Focus on Building community and trust around our brand\n\nAvailable 9 AM\u20139 PM IST, seven days a week with emergency escalations outside these hours are handled on request! \ud83d\ude0a",
-        "type": "services_info",
+        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
+        "type": "collect_info",
+        "next_step": "collect_name"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:42:56.464827",
+      "user_message": "nk",
+      "bot_response": {
+        "message": "Thank you, nk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
+        "type": "collect_info",
+        "next_step": "collect_email"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:43:02.387314",
+      "user_message": "99220041253@klu.ac.in",
+      "bot_response": {
+        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
+        "type": "collect_category",
         "buttons": [
           {
-            "text": "Get Support Now",
+            "text": "Technical Help & Troubleshooting",
+            "action": "category_technical"
+          },
+          {
+            "text": "Warranty & Repairs",
+            "action": "category_warranty"
+          },
+          {
+            "text": "Billing & Account Questions",
+            "action": "category_billing"
+          },
+          {
+            "text": "Product Setup & Software",
+            "action": "category_setup"
+          },
+          {
+            "text": "Returns, Cancellations & Swaps",
+            "action": "category_returns"
+          },
+          {
+            "text": "General Assistance",
+            "action": "category_general"
+          }
+        ],
+        "next_step": "collect_category"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:43:16.954912",
+      "user_message": "My laptop is looking good",
+      "bot_response": {
+        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
+        "type": "collect_description",
+        "next_step": "collect_description"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:43:31.935532",
+      "user_message": "It is good",
+      "bot_response": {
+        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-002\n**Assigned Agent:** Alex (Technical Specialist)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
+        "type": "ticket_created",
+        "buttons": [
+          {
+            "text": "Check This Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "New Support Request",
             "action": "new_complaint"
           },
           {
-            "text": "FAQ",
+            "text": "FAQ & Information",
             "action": "faq"
+          },
+          {
+            "text": "About Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754532016257-sozyn8wz1": [
+    {
+      "timestamp": "2025-08-07T07:30:16.290331",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
           },
           {
             "text": "Check Ticket Status",
             "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754532607047-rtl3tn9ih": [
+    {
+      "timestamp": "2025-08-07T07:40:07.083123",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
           }
         ]
       },
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:03:39.220141",
+      "timestamp": "2025-08-07T07:45:38.488543",
       "user_message": "I want to check my ticket status",
       "bot_response": {
         "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
@@ -448,10 +310,315 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:03:50.393672",
+      "timestamp": "2025-08-07T07:45:46.349997",
+      "user_message": "99220041253@klu.ac.in",
+      "bot_response": {
+        "message": "\u2705 **Multiple Tickets Found!**\n\nI found 2 tickets for 99220041253@klu.ac.in:\n\n\u2022 ZER0-2025-001 - Billing & Account Questions (2025-08-07T07:31:46.552535)\n\u2022 ZER0-2025-002 - Technical Help & Troubleshooting (2025-08-07T07:43:20.358001)\n\nPlease enter a specific ticket ID to get detailed status information. \ud83d\ude0a",
+        "type": "multiple_tickets",
+        "buttons": [
+          {
+            "text": "Check Specific Ticket",
+            "action": "status_check"
+          },
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          }
+        ]
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:45:49.377385",
+      "user_message": "I want to check my ticket status",
+      "bot_response": {
+        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
+        "type": "status_check",
+        "next_step": "process_status_query"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T08:01:07.447705",
+      "user_message": "I need help with a complaint",
+      "bot_response": {
+        "message": "\ud83e\udd14 **Invalid Format**\n\nI didn't recognize 'I need help with a complaint' as a ticket ID or email address.\n\n**Please enter:**\n\u2022 **Ticket ID:** ZER0-2025-001 (starts with ZER0-)\n\u2022 **Email Address:** your@email.com (contains @)\n\n**Example:** ZER0-2025-001 or john@example.com\n\nTry again! \ud83d\ude0a",
+        "type": "invalid_format",
+        "buttons": [
+          {
+            "text": "Try Again",
+            "action": "status_check"
+          },
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          }
+        ]
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T08:01:11.712070",
+      "user_message": "I need help with a complaint",
+      "bot_response": {
+        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
+        "type": "collect_info",
+        "next_step": "collect_name"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T08:01:13.997087",
+      "user_message": "nak",
+      "bot_response": {
+        "message": "Thank you, nak! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
+        "type": "collect_info",
+        "next_step": "collect_email"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:01:20.914206",
+      "user_message": "99220041400@klu.ac.in",
+      "bot_response": {
+        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
+        "type": "collect_category",
+        "buttons": [
+          {
+            "text": "Technical Help & Troubleshooting",
+            "action": "category_technical"
+          },
+          {
+            "text": "Warranty & Repairs",
+            "action": "category_warranty"
+          },
+          {
+            "text": "Billing & Account Questions",
+            "action": "category_billing"
+          },
+          {
+            "text": "Product Setup & Software",
+            "action": "category_setup"
+          },
+          {
+            "text": "Returns, Cancellations & Swaps",
+            "action": "category_returns"
+          },
+          {
+            "text": "General Assistance",
+            "action": "category_general"
+          }
+        ],
+        "next_step": "collect_category"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:01:23.025421",
+      "user_message": "category_general",
+      "bot_response": {
+        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
+        "type": "collect_description",
+        "next_step": "collect_description"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:01:35.127091",
+      "user_message": "general",
+      "bot_response": {
+        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-004\n**Assigned Agent:** Alex (Technical Specialist)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
+        "type": "ticket_created",
+        "buttons": [
+          {
+            "text": "Check This Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "About Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754533619579-wjnohix22": [
+    {
+      "timestamp": "2025-08-07T07:56:59.672246",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754533706757-d5axpfspf": [
+    {
+      "timestamp": "2025-08-07T07:58:26.802000",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:58:31.037901",
+      "user_message": "I need help with a complaint",
+      "bot_response": {
+        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
+        "type": "collect_info",
+        "next_step": "collect_name"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:58:33.094623",
+      "user_message": "Nava",
+      "bot_response": {
+        "message": "Thank you, Nava! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
+        "type": "collect_info",
+        "next_step": "collect_email"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:58:44.720603",
+      "user_message": "99220040115@klu.ac.in",
+      "bot_response": {
+        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
+        "type": "collect_category",
+        "buttons": [
+          {
+            "text": "Technical Help & Troubleshooting",
+            "action": "category_technical"
+          },
+          {
+            "text": "Warranty & Repairs",
+            "action": "category_warranty"
+          },
+          {
+            "text": "Billing & Account Questions",
+            "action": "category_billing"
+          },
+          {
+            "text": "Product Setup & Software",
+            "action": "category_setup"
+          },
+          {
+            "text": "Returns, Cancellations & Swaps",
+            "action": "category_returns"
+          },
+          {
+            "text": "General Assistance",
+            "action": "category_general"
+          }
+        ],
+        "next_step": "collect_category"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:58:52.515096",
+      "user_message": "Need warranty check",
+      "bot_response": {
+        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
+        "type": "collect_description",
+        "next_step": "collect_description"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:59:07.308859",
+      "user_message": "Not important",
+      "bot_response": {
+        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-003\n**Assigned Agent:** Alex (Technical Specialist)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
+        "type": "ticket_created",
+        "buttons": [
+          {
+            "text": "Check This Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "About Our Services",
+            "action": "services_info"
+          }
+        ]
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:59:16.662694",
+      "user_message": "I want to check my ticket status",
+      "bot_response": {
+        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
+        "type": "status_check",
+        "next_step": "process_status_query"
+      },
+      "complaint_data": {}
+    },
+    {
+      "timestamp": "2025-08-07T07:59:26.221904",
       "user_message": "ZER0-2025-003",
       "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-003\n**Status:** Registered\n**Customer:** Navadeep\n**Category:** Technical Help & Troubleshooting\n**Priority:** Medium\n**Assigned Agent:** Anaya\n**Created:** 2025-08-07T01:38:03.609005\n\n**Description:**\nNNa\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
+        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-003\n**Status:** Registered\n**Customer:** Nava\n**Category:** Technical Help & Troubleshooting\n**Priority:** Medium\n**Assigned Agent:** Alex (Technical Specialist)\n**Created:** 2025-08-07T07:59:00.467407\n\n**Description:**\nNot important\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
         "type": "status_result",
         "buttons": [
           {
@@ -471,311 +638,7 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:04:05.854423",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:04:11.692535",
-      "user_message": "How to track my request",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:04:25.632510",
-      "user_message": "ZER0-2025-001",
-      "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-001\n**Status:** Registered\n**Customer:** NK\n**Category:** General Assistance\n**Priority:** Medium\n**Assigned Agent:** Anaya\n**Created:** 2025-08-07T01:17:10.045706\n\n**Description:**\nnn\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
-        "type": "status_result",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:04:39.614309",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:04:43.989045",
-      "user_message": "Contact options",
-      "bot_response": {
-        "message": "I understand you're asking about: 'Contact options'. As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I want to make sure I give you the most helpful response! \ud83d\ude0a\n\nCould you please choose one of these options so I can assist you better? Remember, my goal is to build lasting relationships by resolving issues and anticipating customer needs!",
-        "type": "clarification",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:04:46.225799",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:04:53.565130",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "\u2705 **Multiple Tickets Found!**\n\nI found 2 tickets for 99220041253@klu.ac.in:\n\n\u2022 ZER0-2025-001 - General Assistance (2025-08-07T01:17:10.045706)\n\u2022 ZER0-2025-003 - Technical Help & Troubleshooting (2025-08-07T01:38:03.609005)\n\nPlease enter a specific ticket ID to get detailed status information. \ud83d\ude0a",
-        "type": "multiple_tickets",
-        "buttons": [
-          {
-            "text": "Check Specific Ticket",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:11:14.488376",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:11:28.265646",
-      "user_message": "ZER0-2025-001",
-      "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-001\n**Status:** Registered\n**Customer:** NK\n**Category:** General Assistance\n**Priority:** Medium\n**Assigned Agent:** Anaya\n**Created:** 2025-08-07T01:17:10.045706\n\n**Description:**\nnn\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
-        "type": "status_result",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:13:13.174421",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:13:14.896630",
-      "user_message": "Response times & resolution",
-      "bot_response": {
-        "message": "I understand you're asking about: 'Response times & resolution'. As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I want to make sure I give you the most helpful response! \ud83d\ude0a\n\nCould you please choose one of these options so I can assist you better? Remember, my goal is to build lasting relationships by resolving issues and anticipating customer needs!",
-        "type": "clarification",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:16:10.065315",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:17:10.730336",
-      "user_message": "Contact options",
-      "bot_response": {
-        "message": "I understand you're asking about: 'Contact options'. As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I want to make sure I give you the most helpful response! \ud83d\ude0a\n\nCould you please choose one of these options so I can assist you better? Remember, my goal is to build lasting relationships by resolving issues and anticipating customer needs!",
-        "type": "clarification",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:18:50.736602",
+      "timestamp": "2025-08-07T08:02:07.027507",
       "user_message": "I need help with a complaint",
       "bot_response": {
         "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
@@ -785,16 +648,16 @@
       "complaint_data": {}
     },
     {
-      "timestamp": "2025-08-07T02:19:05.360334",
-      "user_message": "nk",
+      "timestamp": "2025-08-07T08:02:09.446326",
+      "user_message": "mak",
       "bot_response": {
-        "message": "Thank you, nk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
+        "message": "Thank you, mak! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
         "type": "collect_info",
         "next_step": "collect_email"
       }
     },
     {
-      "timestamp": "2025-08-07T02:19:17.438178",
+      "timestamp": "2025-08-07T08:02:15.380220",
       "user_message": "99220041400@klu.ac.in",
       "bot_response": {
         "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
@@ -829,7 +692,7 @@
       }
     },
     {
-      "timestamp": "2025-08-07T02:19:22.006647",
+      "timestamp": "2025-08-07T08:02:19.746530",
       "user_message": "category_general",
       "bot_response": {
         "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
@@ -838,10 +701,10 @@
       }
     },
     {
-      "timestamp": "2025-08-07T02:20:11.636579",
-      "user_message": "Whatebrhjf",
+      "timestamp": "2025-08-07T08:02:31.127566",
+      "user_message": "general",
       "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-005\n**Assigned Agent:** Anaya\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
+        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-005\n**Assigned Agent:** Anaya (General Support)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
         "type": "ticket_created",
         "buttons": [
           {
@@ -864,9 +727,9 @@
       }
     }
   ],
-  "session-1754513435064-01g9hyals": [
+  "session-1754534081083-j3xcyxfo6": [
     {
-      "timestamp": "2025-08-07T02:20:35.145304",
+      "timestamp": "2025-08-07T08:04:41.089807",
       "user_message": "hello",
       "bot_response": {
         "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
@@ -889,100 +752,542 @@
             "action": "services_info"
           }
         ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:20:36.846206",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:20:38.761379",
-      "user_message": "nk",
-      "bot_response": {
-        "message": "Thank you, nk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
       }
-    },
+    }
+  ],
+  "session-1754534872789-hg9qef7d3": [
     {
-      "timestamp": "2025-08-07T02:20:45.916472",
-      "user_message": "99220041400@klu.ac.in",
+      "timestamp": "2025-08-07T08:17:52.822278",
+      "user_message": "hello",
       "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
         "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:20:47.890143",
-      "user_message": "category_technical",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:21:09.331858",
-      "user_message": "nhhh",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-006\n**Assigned Agent:** Anaya\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
           {
             "text": "New Support Request",
             "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
           },
           {
             "text": "FAQ & Information",
             "action": "faq"
           },
           {
-            "text": "About Our Services",
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535340369-6vaay2wzx": [
+    {
+      "timestamp": "2025-08-07T08:25:40.389063",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535500293-t0zuq8t6d": [
+    {
+      "timestamp": "2025-08-07T08:28:20.321002",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535517609-9omwzj0cj": [
+    {
+      "timestamp": "2025-08-07T08:28:37.662554",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535534475-dippevk97": [
+    {
+      "timestamp": "2025-08-07T08:28:54.492955",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535535640-s1j3lak2a": [
+    {
+      "timestamp": "2025-08-07T08:28:55.670592",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535536779-st8pgou89": [
+    {
+      "timestamp": "2025-08-07T08:28:56.795092",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535543635-zl412eqnv": [
+    {
+      "timestamp": "2025-08-07T08:29:03.646979",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535554777-8t6jdwq07": [
+    {
+      "timestamp": "2025-08-07T08:29:14.793638",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535632566-palo5a5qi": [
+    {
+      "timestamp": "2025-08-07T08:30:32.589056",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754535929456-qhaam35ds": [
+    {
+      "timestamp": "2025-08-07T08:35:29.466809",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536431056-zgn2s3nt0": [
+    {
+      "timestamp": "2025-08-07T08:43:51.064739",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536447207-z0ie72ckx": [
+    {
+      "timestamp": "2025-08-07T08:44:07.226820",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536449938-s0i1jctjy": [
+    {
+      "timestamp": "2025-08-07T08:44:10.020610",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536831037-dfbcunxyx": [
+    {
+      "timestamp": "2025-08-07T08:50:31.073567",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536851074-2y3w3auzi": [
+    {
+      "timestamp": "2025-08-07T08:50:51.094970",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536858994-400dffqku": [
+    {
+      "timestamp": "2025-08-07T08:50:59.036669",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536861055-ql4m4zcki": [
+    {
+      "timestamp": "2025-08-07T08:51:01.091474",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
+            "action": "services_info"
+          }
+        ]
+      }
+    }
+  ],
+  "session-1754536963914-hjd788dcv": [
+    {
+      "timestamp": "2025-08-07T08:52:43.954659",
+      "user_message": "hello",
+      "bot_response": {
+        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
+        "type": "greeting",
+        "buttons": [
+          {
+            "text": "New Support Request",
+            "action": "new_complaint"
+          },
+          {
+            "text": "Check Ticket Status",
+            "action": "status_check"
+          },
+          {
+            "text": "FAQ & Information",
+            "action": "faq"
+          },
+          {
+            "text": "Our Services",
             "action": "services_info"
           }
         ]
       }
     },
     {
-      "timestamp": "2025-08-07T02:22:27.287137",
+      "timestamp": "2025-08-07T08:52:48.044555",
       "user_message": "I want to check my ticket status",
       "bot_response": {
         "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
@@ -991,545 +1296,10 @@
       }
     },
     {
-      "timestamp": "2025-08-07T02:22:42.094042",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "\u2705 **Multiple Tickets Found!**\n\nI found 2 tickets for 99220041253@klu.ac.in:\n\n\u2022 ZER0-2025-001 - General Assistance (2025-08-07T01:17:10.045706)\n\u2022 ZER0-2025-003 - Technical Help & Troubleshooting (2025-08-07T01:38:03.609005)\n\nPlease enter a specific ticket ID to get detailed status information. \ud83d\ude0a",
-        "type": "multiple_tickets",
-        "buttons": [
-          {
-            "text": "Check Specific Ticket",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:23:58.612832",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:24:04.349066",
-      "user_message": "Contact options",
-      "bot_response": {
-        "message": "I understand you're asking about: 'Contact options'. As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I want to make sure I give you the most helpful response! \ud83d\ude0a\n\nCould you please choose one of these options so I can assist you better? Remember, my goal is to build lasting relationships by resolving issues and anticipating customer needs!",
-        "type": "clarification",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754514321802-n6pavawxz": [
-    {
-      "timestamp": "2025-08-07T02:35:21.811039",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:35:24.136510",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:35:25.320880",
-      "user_message": "faq_resolution",
-      "bot_response": {
-        "message": "\u23f1\ufe0f **Zer0 Customer Care Response Times:**\n\n\u2022 **Common inquiries answered immediately** - That's me, Prashna! \ud83d\ude0a\n\u2022 **Live human agent call within 1 hour, or ETA provided**\n\u2022 **Email responses:** Within 4 hours\n\u2022 **Full resolution:** Within 24 hours\n\u2022 **Emergency escalations:** Live agents may call back within 30 minutes when required\n\nWe're available 9 AM\u20139 PM IST, seven days a week, with emergency escalations outside these hours are handled on request.\n\nOur commitment to excellence means we strive to exceed these expectations whenever possible! \ud83c\udf1f",
-        "type": "faq_response",
-        "buttons": [
-          {
-            "text": "More FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Status",
-            "action": "status_check"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:35:37.288379",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:35:38.854956",
-      "user_message": "faq_tracking",
-      "bot_response": {
-        "message": "\ud83d\udccb **Tracking Your Zer0 Support Request:**\n\n1. **Ticket ID:** You'll receive a unique ticket ID (e.g., ZER0-2025-001) when you submit\n2. **Email Updates:** Automatic notifications within 4 hours\n3. **Prashna Chat:** Ask me anytime to check your status - I have instant access! \ud83d\udcac\n4. **Multi-Channel Support:** Updates via web chat, phone, email, WhatsApp\n5. **Seamless Transfers:** Seamless transfer to live agents with preserved chat history - no need to repeat yourself!\n\nYour ticket stages: Registered \u2192 Expert Assigned \u2192 In Progress \u2192 Resolved \u2705\n\nI can help you check your status right now if you have a ticket ID! \ud83d\ude0a",
-        "type": "faq_response",
-        "buttons": [
-          {
-            "text": "More FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Status",
-            "action": "status_check"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:36:14.801890",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:36:16.732427",
-      "user_message": "faq_info",
-      "bot_response": {
-        "message": "\ud83d\udcdd **Information for Zer0 Support:**\n\n**Required Information:**\n\u2022 Your full name\n\u2022 Valid email address\n\u2022 Issue category from our support scope:\n  - \u2022 Troubleshooting device issues\n\u2022 Warranty repairs and replacements\n\u2022 Software setup and updates\n\u2022 Billing or account questions\n\u2022 Shipping, returns, or exchange requests\n\u2022 Detailed description of your concern\n\n**Helpful for Faster Resolution:**\n\u2022 Device model and serial number\n\u2022 Error messages or screenshots\n\u2022 Troubleshooting steps you've already tried\n\u2022 Purchase date and warranty status\n\u2022 Account or order number\n\nAs Prashna, I can instantly help with Checking ticket status, Updating complaint details, Initiating returns, cancellations, or swaps! My goal is to anticipate your needs and provide excellent service. \ud83d\ude0a",
-        "type": "faq_response",
-        "buttons": [
-          {
-            "text": "More FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Status",
-            "action": "status_check"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:36:36.976935",
-      "user_message": "Our Services",
-      "bot_response": {
-        "message": "\ud83c\udf1f **Welcome to Zer0 Customer Solutions!**\n\n**Our Mission:** Zer0's unwavering dedication to excellence in service delivery. Whether assisting with a simple inquiry or managing complex product challenges, Zer0 Customer Solutions strives to exceed expectations at every opportunity, reinforcing our reputation as a trusted partner in customer satisfaction and support.\n\n**What We Offer:**\nZer0 provides full-spectrum customer care services similar to HP customer support, including technical help, repairs, warranty claims, billing inquiries, product setup guidance, and general assistance.\n\n**Our Support Scope:**\n\u2022 Troubleshooting device issues\n\u2022 Warranty repairs and replacements\n\u2022 Software setup and updates\n\u2022 Billing or account questions\n\u2022 Shipping, returns, or exchange requests\n\n**Support Channels:**\n\u2022 Web Chat\n\u2022 Phone\n\u2022 Email\n\u2022 Whatsapp\n\n**\ud83d\udcde Contact Zer0 Support Team:**\n\u2022 **Email:** navadeepmarella@gmail.com\n\u2022 **Phone:** 7075072880\n\u2022 **Hours:** 9 AM\u20139 PM IST, seven days a week\n\u2022 **Emergency:** Emergency escalations outside these hours are handled on request\n\n**Additional Services:**\n\u2022 Quarterly webinars and live Q&A sessions with product specialists and service managers providing Product updates, maintenance tips, and upcoming releases\n\u2022 Rewards customers who recommend Zer0 products and services\n\u2022 Focus on Building community and trust around our brand\n\nReady to help you 24/7! \ud83d\ude0a",
-        "type": "services_info",
-        "buttons": [
-          {
-            "text": "Get Support Now",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754514429650-ltns2y7cr": [
-    {
-      "timestamp": "2025-08-07T02:37:09.656947",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754514451192-e7uh91eh2": [
-    {
-      "timestamp": "2025-08-07T02:37:31.234126",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754515059623-mbdpne62e": [
-    {
-      "timestamp": "2025-08-07T02:47:39.770410",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754515097412-4gpqc6y6r": [
-    {
-      "timestamp": "2025-08-07T02:48:17.511491",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    }
-  ],
-  "session-1754515105424-lo5xiyxqs": [
-    {
-      "timestamp": "2025-08-07T02:48:27.899138",
-      "user_message": "hello",
-      "bot_response": {
-        "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
-        "type": "greeting",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:48:43.359465",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T02:48:51.345897",
-      "user_message": "santhosh",
-      "bot_response": {
-        "message": "Thank you, santhosh! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:49:03.344744",
-      "user_message": "santhoshmanda259@gmail.com",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:49:06.752298",
-      "user_message": "category_billing",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:50:52.237861",
-      "user_message": "my billing date is expired and i want to claim my warrent",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-007\n**Assigned Agent:** Anaya\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:51:38.450642",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T02:51:55.347993",
+      "timestamp": "2025-08-07T08:52:53.222710",
       "user_message": "ZER0-2025-001",
       "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-001\n**Status:** Registered\n**Customer:** NK\n**Category:** General Assistance\n**Priority:** Medium\n**Assigned Agent:** Anaya\n**Created:** 2025-08-07T01:17:10.045706\n\n**Description:**\nnn\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
+        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-001\n**Status:** Registered\n**Customer:** nn\n**Category:** Billing & Account Questions\n**Priority:** Medium\n**Assigned Agent:** Mike (Billing Specialist)\n**Created:** 2025-08-07T07:31:46.552535\n\n**Description:**\nJust give me info\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
         "type": "status_result",
         "buttons": [
           {
@@ -1546,41 +1316,11 @@
           }
         ]
       }
-    },
-    {
-      "timestamp": "2025-08-07T02:52:32.286994",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      }
     }
   ],
-  "session-1754520472917-yq1vczpw0": [
+  "session-1754537680202-sho71wyh2": [
     {
-      "timestamp": "2025-08-07T04:17:53.011932",
+      "timestamp": "2025-08-07T09:04:40.283457",
       "user_message": "hello",
       "bot_response": {
         "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
@@ -1603,211 +1343,12 @@
             "action": "services_info"
           }
         ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:17:55.137922",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:17:58.931635",
-      "user_message": "Nk",
-      "bot_response": {
-        "message": "Thank you, Nk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:05.841833",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:07.431266",
-      "user_message": "category_returns",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:17.959802",
-      "user_message": ",,ss",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-008\n**Assigned Agent:** David (Returns Manager)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:25.234666",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:37.342208",
-      "user_message": "ZER0-2025-008",
-      "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-008\n**Status:** Registered\n**Customer:** Nk\n**Category:** Returns, Cancellations & Swaps\n**Priority:** Medium\n**Assigned Agent:** David (Returns Manager)\n**Created:** 2025-08-07T04:18:09.639609\n\n**Description:**\n,,ss\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
-        "type": "status_result",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:53.164032",
-      "user_message": "I have questions",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:54.412260",
-      "user_message": "faq_resolution",
-      "bot_response": {
-        "message": "\u23f1\ufe0f **Zer0 Customer Care Response Times:**\n\n\u2022 **Common inquiries answered immediately** - That's me, Prashna! \ud83d\ude0a\n\u2022 **Live human agent call within 1 hour, or ETA provided**\n\u2022 **Email responses:** Within 4 hours\n\u2022 **Full resolution:** Within 24 hours\n\u2022 **Emergency escalations:** Live agents may call back within 30 minutes when required\n\nWe're available 9 AM\u20139 PM IST, seven days a week, with emergency escalations outside these hours are handled on request.\n\nOur commitment to excellence means we strive to exceed these expectations whenever possible! \ud83c\udf1f",
-        "type": "faq_response",
-        "buttons": [
-          {
-            "text": "More FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Status",
-            "action": "status_check"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:18:58.244652",
-      "user_message": "Our Services",
-      "bot_response": {
-        "message": "\ud83c\udf1f **Welcome to Zer0 Customer Solutions!**\n\n**Our Mission:** Zer0's unwavering dedication to excellence in service delivery. Whether assisting with a simple inquiry or managing complex product challenges, Zer0 Customer Solutions strives to exceed expectations at every opportunity, reinforcing our reputation as a trusted partner in customer satisfaction and support.\n\n**What We Offer:**\nZer0 provides full-spectrum customer care services similar to HP customer support, including technical help, repairs, warranty claims, billing inquiries, product setup guidance, and general assistance.\n\n**Our Support Scope:**\n\u2022 Troubleshooting device issues\n\u2022 Warranty repairs and replacements\n\u2022 Software setup and updates\n\u2022 Billing or account questions\n\u2022 Shipping, returns, or exchange requests\n\n**Support Channels:**\n\u2022 Web Chat\n\u2022 Phone\n\u2022 Email\n\u2022 Whatsapp\n\n**\ud83d\udcde Contact Zer0 Support Team:**\n\u2022 **Email:** navadeepmarella@gmail.com\n\u2022 **Phone:** 7075072880\n\u2022 **Hours:** 9 AM\u20139 PM IST, seven days a week\n\u2022 **Emergency:** Emergency escalations outside these hours are handled on request\n\n**Additional Services:**\n\u2022 Quarterly webinars and live Q&A sessions with product specialists and service managers providing Product updates, maintenance tips, and upcoming releases\n\u2022 Rewards customers who recommend Zer0 products and services\n\u2022 Focus on Building community and trust around our brand\n\nReady to help you 24/7! \ud83d\ude0a",
-        "type": "services_info",
-        "buttons": [
-          {
-            "text": "Get Support Now",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "Check Ticket Status",
-            "action": "status_check"
-          }
-        ]
       }
     }
   ],
-  "session-1754520627157-5anr5cztv": [
+  "session-1754537688253-s88fl4c62": [
     {
-      "timestamp": "2025-08-07T04:20:27.196960",
+      "timestamp": "2025-08-07T09:04:48.263572",
       "user_message": "hello",
       "bot_response": {
         "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
@@ -1830,598 +1371,12 @@
             "action": "services_info"
           }
         ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:20:29.496266",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:20:37.161558",
-      "user_message": "ZER0-2025-008",
-      "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-008\n**Status:** Registered\n**Customer:** Nk\n**Category:** Returns, Cancellations & Swaps\n**Priority:** Medium\n**Assigned Agent:** David (Returns Manager)\n**Created:** 2025-08-07T04:18:09.639609\n\n**Description:**\n,,ss\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
-        "type": "status_result",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:20:56.411950",
-      "user_message": "About Our Services",
-      "bot_response": {
-        "message": "What would you like to know more about?",
-        "type": "faq",
-        "buttons": [
-          {
-            "text": "Response times & resolution",
-            "action": "faq_resolution"
-          },
-          {
-            "text": "How to track my request",
-            "action": "faq_tracking"
-          },
-          {
-            "text": "What info should I provide?",
-            "action": "faq_info"
-          },
-          {
-            "text": "Escalation process",
-            "action": "faq_escalation"
-          },
-          {
-            "text": "Contact options",
-            "action": "faq_contact"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:20:59.045201",
-      "user_message": "faq_tracking",
-      "bot_response": {
-        "message": "\ud83d\udccb **Tracking Your Zer0 Support Request:**\n\n1. **Ticket ID:** You'll receive a unique ticket ID (e.g., ZER0-2025-001) when you submit\n2. **Email Updates:** Automatic notifications within 4 hours\n3. **Prashna Chat:** Ask me anytime to check your status - I have instant access! \ud83d\udcac\n4. **Multi-Channel Support:** Updates via web chat, phone, email, WhatsApp\n5. **Seamless Transfers:** Seamless transfer to live agents with preserved chat history - no need to repeat yourself!\n\nYour ticket stages: Registered \u2192 Expert Assigned \u2192 In Progress \u2192 Resolved \u2705\n\nI can help you check your status right now if you have a ticket ID! \ud83d\ude0a",
-        "type": "faq_response",
-        "buttons": [
-          {
-            "text": "More FAQ",
-            "action": "faq"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "Check Status",
-            "action": "status_check"
-          },
-          {
-            "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:21:01.590022",
-      "user_message": "I want to check my ticket status",
-      "bot_response": {
-        "message": "I'll help you check your ticket status right away! Please enter your ticket ID (e.g., ZER0-2025-001) or the email address you used when submitting your request:",
-        "type": "status_check",
-        "next_step": "process_status_query"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:21:05.365181",
-      "user_message": "ZER0-2025-008",
-      "bot_response": {
-        "message": "\u2705 **Ticket Status Found!**\n\n**Ticket ID:** ZER0-2025-008\n**Status:** Registered\n**Customer:** Nk\n**Category:** Returns, Cancellations & Swaps\n**Priority:** Medium\n**Assigned Agent:** David (Returns Manager)\n**Created:** 2025-08-07T04:18:09.639609\n\n**Description:**\n,,ss\n\n**Next Steps:**\n\u2022 Our agent will contact you within 1 hour\n\u2022 Check your email for updates\n\u2022 I'm here if you need anything else! \ud83d\ude0a",
-        "type": "status_result",
-        "buttons": [
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:21:49.460303",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:21:51.253335",
-      "user_message": "nk",
-      "bot_response": {
-        "message": "Thank you, nk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:21:58.725537",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:22:01.062617",
-      "user_message": "category_setup",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:22:12.718682",
-      "user_message": "mm\\\\",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-009\n**Assigned Agent:** Alex (Technical Specialist)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:22:51.504236",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:22:54.361176",
-      "user_message": "Nk",
-      "bot_response": {
-        "message": "Thank you, Nk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:23:00.552210",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:23:32.967277",
-      "user_message": "category_general",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:23:45.698017",
-      "user_message": "nn",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-010\n**Assigned Agent:** Anaya (General Support)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:24:23.855412",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:24:25.991212",
-      "user_message": "nkkk",
-      "bot_response": {
-        "message": "Thank you, nkkk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:24:32.889048",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:24:34.477918",
-      "user_message": "category_returns",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:24:46.574335",
-      "user_message": "kkss",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-011\n**Assigned Agent:** Anaya (General Support)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:41:34.574523",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:41:38.595917",
-      "user_message": "nklll",
-      "bot_response": {
-        "message": "Thank you, nklll! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:41:54.575403",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:41:56.391401",
-      "user_message": "category_returns",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:42:15.569680",
-      "user_message": "mm",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-012\n**Assigned Agent:** David (Returns Manager)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:42:31.039177",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:42:34.628919",
-      "user_message": "nkm",
-      "bot_response": {
-        "message": "Thank you, nkm! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:42:55.000739",
-      "user_message": "99220041246@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:43:08.094734",
-      "user_message": "I want  to return my laptop and cancel the order",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:43:22.129576",
-      "user_message": "Thats it",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-013\n**Assigned Agent:** Anaya (General Support)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
       }
     }
   ],
-  "session-1754522979840-ep0h10hnw": [
+  "session-1754537947465-yegwwe923": [
     {
-      "timestamp": "2025-08-07T04:59:39.903600",
+      "timestamp": "2025-08-07T09:09:07.537264",
       "user_message": "hello",
       "bot_response": {
         "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
@@ -2444,102 +1399,12 @@
             "action": "services_info"
           }
         ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T05:00:58.853063",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T05:01:01.785515",
-      "user_message": "kmm",
-      "bot_response": {
-        "message": "Thank you, kmm! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T05:01:10.155887",
-      "user_message": "99220041253@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T05:01:32.150200",
-      "user_message": "I want to know about how to install vs code in my laptop",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T05:02:09.442557",
-      "user_message": "Tell me more about installation of vscode in my laptop",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-015\n**Assigned Agent:** Alex (Technical Specialist)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
-            "action": "services_info"
-          }
-        ]
       }
     }
   ],
-  "session-1754522981156-hw14ubrrk": [
+  "session-1754538413989-l9xcyvgdx": [
     {
-      "timestamp": "2025-08-07T04:59:41.181132",
+      "timestamp": "2025-08-07T09:16:54.064243",
       "user_message": "hello",
       "bot_response": {
         "message": "Hi! \ud83d\udc4b Welcome to Zer0 Customer Support! I'm Prashna, your friendly and empathetic digital assistant.\n\nI'm here to provide you with excellent customer care, just like our full-spectrum support services. I can help with technical issues, warranty claims, billing questions, product setup, and much more!\n\nHow can I assist you today? \ud83d\ude0a",
@@ -2559,96 +1424,6 @@
           },
           {
             "text": "Our Services",
-            "action": "services_info"
-          }
-        ]
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:59:44.805439",
-      "user_message": "I need help with a complaint",
-      "bot_response": {
-        "message": "I'll be delighted to help you with your concern! \ud83d\ude0a As your Friendly and empathetic digital assistant representing Zer0 Customer Care, I'm here to provide you with excellent support.\n\nWhether it's Troubleshooting device issues, Warranty repairs and replacements, Software setup and updates, or any other issue, I'll make sure you get the expert help you deserve. Let me gather some details so I can route your request to the right specialist.\n\nWhat's your full name?",
-        "type": "collect_info",
-        "next_step": "collect_name"
-      },
-      "complaint_data": {}
-    },
-    {
-      "timestamp": "2025-08-07T04:59:47.879905",
-      "user_message": "kkk",
-      "bot_response": {
-        "message": "Thank you, kkk! It's wonderful to meet you. \ud83d\ude0a Now, what's your email address? I'll use this to send you updates and confirmations about your support request.",
-        "type": "collect_info",
-        "next_step": "collect_email"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:59:53.872882",
-      "user_message": "99220041246@klu.ac.in",
-      "bot_response": {
-        "message": "Perfect! Now, what type of issue are you experiencing? I'll make sure to connect you with the right specialist from our expert team. We cover all these areas as part of our full-spectrum customer care:",
-        "type": "collect_category",
-        "buttons": [
-          {
-            "text": "Technical Help & Troubleshooting",
-            "action": "category_technical"
-          },
-          {
-            "text": "Warranty & Repairs",
-            "action": "category_warranty"
-          },
-          {
-            "text": "Billing & Account Questions",
-            "action": "category_billing"
-          },
-          {
-            "text": "Product Setup & Software",
-            "action": "category_setup"
-          },
-          {
-            "text": "Returns, Cancellations & Swaps",
-            "action": "category_returns"
-          },
-          {
-            "text": "General Assistance",
-            "action": "category_general"
-          }
-        ],
-        "next_step": "collect_category"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T04:59:56.512328",
-      "user_message": "category_returns",
-      "bot_response": {
-        "message": "Excellent choice! Now, please describe your issue in detail. The more information you provide, the better I can help you and ensure our specialist has everything they need to resolve your concern quickly. \ud83d\ude0a\n\nFeel free to include any error messages, steps you've tried, or when the issue started!",
-        "type": "collect_description",
-        "next_step": "collect_description"
-      }
-    },
-    {
-      "timestamp": "2025-08-07T05:00:20.714948",
-      "user_message": "So, basically, i need to return my product",
-      "bot_response": {
-        "message": "\ud83c\udf89 Wonderful! Your request has been successfully logged with Zer0 Customer Care! I'm excited to help you get this resolved.\n\n**\u2705 Your Ticket Details:**\n**Ticket ID:** ZER0-2025-014\n**Assigned Agent:** Anaya (General Support)\n**Expected Response:** Live human agent call within 1 hour, or ETA provided\n\n**\ud83d\udce7 Email Status:** \u2705 Email notifications sent successfully\n\n**\ud83d\udce7 What happens next:**\n\u2022 You'll receive email confirmation within 4 hours\n\u2022 For urgent issues: Live agents may call back within 30 minutes when required\n\u2022 Full resolution: Within 24 hours\n\n**\ud83d\udcac Remember:** I'm always here if you need to check your status or have other questions!\n\nIs there anything else I can help you with today? \ud83d\ude0a",
-        "type": "ticket_created",
-        "buttons": [
-          {
-            "text": "Check This Ticket Status",
-            "action": "status_check"
-          },
-          {
-            "text": "New Support Request",
-            "action": "new_complaint"
-          },
-          {
-            "text": "FAQ & Information",
-            "action": "faq"
-          },
-          {
-            "text": "About Our Services",
             "action": "services_info"
           }
         ]

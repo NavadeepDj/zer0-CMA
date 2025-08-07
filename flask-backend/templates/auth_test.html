@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth Test - Zer0 Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success {
+            color: green;
+            background-color: #d4edda;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .error {
+            color: red;
+            background-color: #f8d7da;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        .user-info {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Firebase Authentication Test</h1>
+        <p>Test Firebase Authentication integration with the Zer0 Support System</p>
+
+        <!-- Registration Section -->
+        <div class="section">
+            <h2>Register New User</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regEmail">Email:</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="regFullName">Full Name:</label>
+                    <input type="text" id="regFullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regRole">Role:</label>
+                    <select id="regRole">
+                        <option value="customer">Customer</option>
+                        <option value="agent">Agent</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <div id="registerResult"></div>
+        </div>
+
+        <!-- Login Section -->
+        <div class="section">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginResult"></div>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="section hidden" id="profileSection">
+            <h2>User Profile</h2>
+            <div id="userInfo" class="user-info"></div>
+            <button onclick="logout()">Logout</button>
+            <button onclick="getProfile()">Refresh Profile</button>
+        </div>
+
+        <!-- Test Admin User -->
+        <div class="section">
+            <h2>Quick Test</h2>
+            <p>Use the default admin user for testing:</p>
+            <p><strong>Email:</strong> admin@zer0.com</p>
+            <p><strong>Password:</strong> admin123</p>
+            <button onclick="quickLogin()">Quick Admin Login</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+ 
+    <script>
+        // Firebase configuration - Replace with your config
+        const firebaseConfig = {
+  apiKey: "AIzaSyDlO79eAzP01wCdCSYs9v0RpmD4FIYcnxs",
+  authDomain: "customermanagesys.firebaseapp.com",
+  projectId: "customermanagesys",
+  storageBucket: "customermanagesys.firebasestorage.app",
+  messagingSenderId: "329844596313",
+  appId: "1:329844596313:web:23dc71021a65a4e1b59b48"
+};
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Register form handler
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const fullName = document.getElementById('regFullName').value;
+            const role = document.getElementById('regRole').value;
+            
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                        full_name: fullName,
+                        role: role
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    document.getElementById('registerResult').innerHTML = 
+                        `<div class="success">✅ ${result.message}</div>`;
+                    document.getElementById('registerForm').reset();
+                } else {
+                    document.getElementById('registerResult').innerHTML = 
+                        `<div class="error">❌ ${result.error}</div>`;
+                }
+            } catch (error) {
+                document.getElementById('registerResult').innerHTML = 
+                    `<div class="error">❌ Registration failed: ${error.message}</div>`;
+            }
+        });
+
+        // Login form handler
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            try {
+                // Sign in with Firebase
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+                
+                // Get ID token
+                const idToken = await user.getIdToken();
+                
+                // Send token to backend
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id_token: idToken
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    document.getElementById('loginResult').innerHTML = 
+                        `<div class="success">✅ ${result.message}</div>`;
+                    document.getElementById('loginForm').reset();
+                    showProfile(result.user);
+                } else {
+                    document.getElementById('loginResult').innerHTML = 
+                        `<div class="error">❌ ${result.error}</div>`;
+                }
+            } catch (error) {
+                document.getElementById('loginResult').innerHTML = 
+                    `<div class="error">❌ Login failed: ${error.message}</div>`;
+            }
+        });
+
+        // Quick login function
+        async function quickLogin() {
+            document.getElementById('loginEmail').value = 'admin@zer0.com';
+            document.getElementById('loginPassword').value = 'admin123';
+            document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+        }
+
+        // Show profile section
+        function showProfile(user) {
+            document.getElementById('profileSection').classList.remove('hidden');
+            document.getElementById('userInfo').innerHTML = `
+                <h3>Welcome, ${user.display_name || user.email}!</h3>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Role:</strong> ${user.role}</p>
+                <p><strong>Email Verified:</strong> ${user.email_verified ? 'Yes' : 'No'}</p>
+                <p><strong>UID:</strong> ${user.uid}</p>
+            `;
+        }
+
+        // Get profile function
+        async function getProfile() {
+            try {
+                const response = await fetch('/api/auth/profile');
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showProfile(result.user);
+                } else {
+                    alert('Failed to get profile: ' + result.error);
+                }
+            } catch (error) {
+                alert('Failed to get profile: ' + error.message);
+            }
+        }
+
+        // Logout function
+        async function logout() {
+            try {
+                await auth.signOut();
+                
+                const response = await fetch('/api/auth/logout', {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    document.getElementById('profileSection').classList.add('hidden');
+                    document.getElementById('loginResult').innerHTML = 
+                        '<div class="success">✅ Logged out successfully</div>';
+                }
+            } catch (error) {
+                alert('Logout failed: ' + error.message);
+            }
+        }
+
+        // Check if user is already logged in
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                try {
+                    const response = await fetch('/api/auth/profile');
+                    if (response.ok) {
+                        const result = await response.json();
+                        showProfile(result.user);
+                    }
+                } catch (error) {
+                    console.log('Failed to get profile on auth state change');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

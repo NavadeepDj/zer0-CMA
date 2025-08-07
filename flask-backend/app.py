@@ -11,6 +11,22 @@ from email.mime.multipart import MIMEMultipart
 import os
 import joblib
 
+# Import dashboard routes
+try:
+    from dashboard_routes import integrate_dashboard_routes
+    dashboard_integration_available = True
+except ImportError:
+    dashboard_integration_available = False
+    logging.warning("Dashboard routes not available")
+
+# Import auth routes
+try:
+    from auth_routes import auth_bp
+    auth_integration_available = True
+except ImportError:
+    auth_integration_available = False
+    logging.warning("Auth routes not available")
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -18,6 +34,21 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
+# Configure session for authentication
+app.config['SECRET_KEY'] = 'your-secret-key-here'  # Change this in production
+
+# Integrate dashboard routes
+if dashboard_integration_available:
+    integrate_dashboard_routes(app)
+    logger.info("✅ Dashboard routes integrated")
+
+# Integrate auth routes
+if auth_integration_available:
+    app.register_blueprint(auth_bp)
+    logger.info("✅ Auth routes integrated")
+
+# from integrate_user_dashboard import integrate_user_dashboard_with_app
+# integrate_user_dashboard_with_app(app)
 # Email configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -958,6 +989,26 @@ def index():
                          referral_source=referral_source,
                          issue_type=issue_type)
 
+@app.route('/auth')
+def auth_page():
+    """Serve the authentication page"""
+    return render_template('auth_dashboard.html')
+
+@app.route('/chatbot')
+def chatbot_page():
+    """Serve the chatbot interface (alternative route)"""
+    # Get query parameters for referral tracking
+    referral = request.args.get('referral', '')
+    escalated = request.args.get('escalated', 'false')
+    ticket_id = request.args.get('ticket_id', '')
+    action = request.args.get('action', '')
+    
+    return render_template('chatbot.html', 
+                         referral_source=referral,
+                         escalated=escalated,
+                         ticket_id=ticket_id,
+                         action=action)
+
 @app.route('/form')
 def simple_form():
     """Serve the simple form interface"""
@@ -1132,6 +1183,107 @@ def send_customer_confirmation(ticket):
     except Exception as e:
         logger.error(f"Failed to send customer confirmation: {str(e)}")
 
+def send_ticket_closure_notification(ticket):
+    """Send closure notification email to customer"""
+    try:
+        subject = f"✅ Your Support Request Resolved - Ticket {ticket.get('ticket_number', ticket.get('id'))}"
+        
+        # Get customer email from different possible fields
+        customer_email = ticket.get('customer_email') or ticket.get('user_email') or ticket.get('email')
+        customer_name = ticket.get('customer_name') or ticket.get('name') or 'Valued Customer'
+        ticket_id = ticket.get('ticket_number') or ticket.get('id')
+        
+        if not customer_email:
+            logger.error(f"No customer email found for ticket {ticket_id}")
+            return
+        
+        # Get resolution details
+        resolution_date = datetime.now().strftime('%B %d, %Y at %I:%M %p')
+        agent_name = ticket.get('assigned_agent', 'Our Support Team')
+        category = ticket.get('category', 'General Support')
+        created_date = ticket.get('created_at', 'Recently')
+        
+        # Get agent notes if available
+        agent_notes = ""
+        if 'agent_notes' in ticket and ticket['agent_notes']:
+            latest_note = ticket['agent_notes'][-1]  # Get the latest note
+            agent_notes = f"""
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; border-left: 4px solid #28a745; margin: 20px 0;">
+                    <strong>📝 Resolution Notes from {agent_name}:</strong><br>
+                    <em>"{latest_note.get('note', 'Issue has been resolved successfully.')}"</em>
+                </div>
+            """
+        
+        html_body = f"""
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 20px; text-align: center;">
+                <h2>🎉 Your Support Request is Resolved!</h2>
+                <p>We're happy to let you know your issue has been successfully resolved.</p>
+            </div>
+            
+            <div style="padding: 20px;">
+                <p>Dear <strong>{customer_name}</strong>,</p>
+                
+                <p>Great news! Your support request has been successfully resolved by our team. We hope the solution provided meets your expectations.</p>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h3>📋 Ticket Summary:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><strong>🎫 Ticket ID:</strong> {ticket_id}</li>
+                        <li><strong>📂 Category:</strong> {category}</li>
+                        <li><strong>📅 Submitted:</strong> {created_date}</li>
+                        <li><strong>✅ Resolved:</strong> {resolution_date}</li>
+                        <li><strong>👤 Handled by:</strong> {agent_name}</li>
+                        <li><strong>🔒 Status:</strong> <span style="color: #28a745; font-weight: bold;">CLOSED</span></li>
+                    </ul>
+                </div>
+                
+                {agent_notes}
+                
+                <div style="background: #d1ecf1; padding: 15px; border-radius: 5px; border-left: 4px solid #17a2b8; margin: 20px 0;">
+                    <strong>💡 What's Next?</strong><br>
+                    • Your ticket is now closed and marked as resolved<br>
+                    • If you need further assistance, feel free to create a new support request<br>
+                    • We'd love to hear your feedback about our service<br>
+                    • Keep your ticket ID for future reference if needed
+                </div>
+                
+                <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107; margin: 20px 0;">
+                    <strong>📞 Still Need Help?</strong><br>
+                    If this resolution doesn't fully address your concern, please don't hesitate to contact us again:<br>
+                    • Create a new support request through our website<br>
+                    • Reference this ticket ID: <strong>{ticket_id}</strong><br>
+                    • Our team is available 9 AM–9 PM IST, seven days a week
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <p><strong>📧 Contact Information:</strong></p>
+                    <p>📞 Phone: 7075072880<br>
+                    📧 Email: navadeepmarella@gmail.com<br>
+                    🌐 Website: Zer0 Customer Support Portal</p>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; text-align: center; border-radius: 10px;">
+                    <p><strong>Thank you for choosing Zer0!</strong><br>
+                    We appreciate your patience and trust in our support team.<br>
+                    <em>"Your satisfaction is our success"</em></p>
+                    
+                    <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                        Best regards,<br>
+                        <strong>{agent_name}</strong><br>
+                        Zer0 Customer Support Team
+                    </p>
+                </div>
+            </div>
+        </div>
+        """
+        
+        send_email(customer_email, subject, html_body)
+        logger.info(f"✅ Closure notification sent to {customer_email} for ticket {ticket_id}")
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to send closure notification: {str(e)}")
+
 def send_email(to_email, subject, html_body):
     """Send email using SMTP"""
     try:
@@ -1267,6 +1419,97 @@ def get_ticket_status(ticket_id):
             "error": "Failed to retrieve ticket status"
         }), 500
 
+@app.route('/api/tickets/<ticket_id>/status', methods=['PUT'])
+def update_ticket_status(ticket_id):
+    """Update ticket status (for agents/admins)"""
+    try:
+        data = request.get_json()
+        new_status = data.get('status')
+        notes = data.get('notes', '')
+        updated_by = data.get('updated_by', 'system')
+        
+        if not new_status:
+            return jsonify({
+                'success': False,
+                'error': 'Status is required'
+            }), 400
+        
+        # Valid status values
+        valid_statuses = ['registered', 'assigned', 'in-progress', 'resolved', 'closed']
+        if new_status not in valid_statuses:
+            return jsonify({
+                'success': False,
+                'error': f'Invalid status. Must be one of: {", ".join(valid_statuses)}'
+            }), 400
+        
+        # Find ticket by ID or ticket_number
+        ticket_found = False
+        ticket_key = None
+        
+        for key, ticket_data in tickets.items():
+            if key == ticket_id or ticket_data.get('ticket_number') == ticket_id:
+                ticket_found = True
+                ticket_key = key
+                break
+        
+        if not ticket_found:
+            return jsonify({
+                'success': False,
+                'error': 'Ticket not found'
+            }), 404
+        
+        # Update ticket status
+        tickets[ticket_key]['status'] = new_status
+        tickets[ticket_key]['updated_at'] = datetime.now().isoformat()
+        tickets[ticket_key]['updated_by'] = updated_by
+        
+        if notes:
+            if 'agent_notes' not in tickets[ticket_key]:
+                tickets[ticket_key]['agent_notes'] = []
+            tickets[ticket_key]['agent_notes'].append({
+                'note': notes,
+                'timestamp': datetime.now().isoformat(),
+                'updated_by': updated_by
+            })
+        
+        # Add status history
+        if 'status_history' not in tickets[ticket_key]:
+            tickets[ticket_key]['status_history'] = []
+        
+        tickets[ticket_key]['status_history'].append({
+            'status': new_status,
+            'timestamp': datetime.now().isoformat(),
+            'updated_by': updated_by,
+            'notes': notes
+        })
+        
+        # Save tickets
+        save_tickets()
+        
+        # Send closure notification email if ticket is closed
+        if new_status == 'closed':
+            try:
+                logger.info(f"📧 Sending closure notification for ticket {ticket_id}")
+                send_ticket_closure_notification(tickets[ticket_key])
+                logger.info(f"✅ Closure notification sent successfully for ticket {ticket_id}")
+            except Exception as e:
+                logger.error(f"❌ Failed to send closure notification for ticket {ticket_id}: {str(e)}")
+        
+        logger.info(f"✅ Ticket {ticket_id} status updated to {new_status} by {updated_by}")
+        
+        return jsonify({
+            'success': True,
+            'message': f'Ticket status updated to {new_status}',
+            'ticket': tickets[ticket_key]
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"❌ Error updating ticket status: {e}")
+        return jsonify({
+            'success': False,
+            'error': 'Failed to update ticket status'
+        }), 500
+
 @app.route('/api/webhook/complaint', methods=['POST'])
 def webhook_complaint():
     """Webhook endpoint for JotForm integration (backward compatibility)"""
@@ -1291,10 +1534,21 @@ def webhook_complaint():
 def get_all_tickets():
     """Get all tickets for admin view"""
     try:
+        # Convert tickets dictionary to array for frontend
+        tickets_array = []
+        for ticket_id, ticket_data in tickets.items():
+            # Ensure ticket has an ID field
+            if 'ticket_number' not in ticket_data and 'id' not in ticket_data:
+                ticket_data['id'] = ticket_id
+            tickets_array.append(ticket_data)
+        
+        # Sort by creation date (newest first)
+        tickets_array.sort(key=lambda x: x.get('created_at', ''), reverse=True)
+        
         return jsonify({
             "success": True,
-            "total_tickets": len(tickets),
-            "tickets": tickets
+            "total_tickets": len(tickets_array),
+            "tickets": tickets_array
         })
     except Exception as e:
         logger.error(f"Error retrieving tickets: {str(e)}")
@@ -1376,6 +1630,174 @@ def health_check():
         "agents_offline": agent_summary['offline'],
         "timestamp": datetime.now().isoformat()
     })
+@app.route('/escalate')
+def escalate_from_jotform():
+    """Handle escalation from JotForm chatbot"""
+    # Get escalation context
+    issue_type = request.args.get('issue', 'general')
+    priority = request.args.get('priority', 'medium')
+    user_message = request.args.get('message', '')
+    
+    # Store escalation context in session
+    session['escalation_context'] = {
+        'source': 'jotform',
+        'issue_type': issue_type,
+        'priority': priority,
+        'user_message': user_message,
+        'escalated': True,
+        'timestamp': datetime.now().isoformat()
+    }
+    
+    # Log escalation
+    logger.info(f"📈 JotForm escalation: {issue_type} - {priority}")
+    
+    # Redirect to your existing chatbot with escalation parameters
+    return redirect(f'/?ref=jotform&escalated=true&issue={issue_type}&priority={priority}')
+
+@app.route('/api/escalation-status')
+def escalation_status():
+    """Check if current session is escalated"""
+    escalation_context = session.get('escalation_context', {})
+    
+    return jsonify({
+        'escalated': escalation_context.get('escalated', False),
+        'source': escalation_context.get('source', ''),
+        'issue_type': escalation_context.get('issue_type', ''),
+        'priority': escalation_context.get('priority', 'medium'),
+        'timestamp': escalation_context.get('timestamp', '')
+    })
+
+@app.route('/api/escalated-chat', methods=['POST'])
+def escalated_chat():
+    """Process chat messages for escalated users with enhanced features"""
+    try:
+        data = request.get_json()
+        message = data.get('message', '')
+        session_id = data.get('session_id', 'default')
+        
+        # Check if user is escalated
+        escalation_context = session.get('escalation_context', {})
+        is_escalated = escalation_context.get('escalated', False)
+        
+        # Process message with escalation context
+        if is_escalated:
+            # Add escalation context to the message processing
+            issue_type = escalation_context.get('issue_type', 'general')
+            priority = escalation_context.get('priority', 'medium')
+            
+            # Enhance the message with escalation context
+            enhanced_message = f"[ESCALATED FROM JOTFORM - {issue_type.upper()} - {priority.upper()}] {message}"
+            
+            # Use your existing chatbot logic
+            bot_response = prashna.process_message(enhanced_message, session_id)
+            
+            # Enhance response for escalated users
+            if isinstance(bot_response, dict):
+                # Add escalation-specific options
+                if 'buttons' not in bot_response:
+                    bot_response['buttons'] = []
+                
+                # Add priority options for escalated users
+                escalation_buttons = [
+                    {"text": "🚨 Urgent Agent Connection", "action": "urgent_agent"},
+                    {"text": "📋 Create Priority Ticket", "action": "priority_ticket"},
+                    {"text": "📞 Request Callback", "action": "request_callback"}
+                ]
+                
+                # Add buttons if not already present
+                existing_actions = [btn.get('action', '') for btn in bot_response.get('buttons', [])]
+                for btn in escalation_buttons:
+                    if btn['action'] not in existing_actions:
+                        bot_response['buttons'].append(btn)
+                
+                # Add escalation indicator
+                bot_response['escalated'] = True
+                bot_response['escalation_source'] = 'jotform'
+                bot_response['priority'] = priority
+        else:
+            # Regular message processing using existing logic
+            bot_response = prashna.process_message(message, session_id)
+        
+        return jsonify({
+            'success': True,
+            'response': bot_response,
+            'escalated': is_escalated,
+            'escalation_context': escalation_context if is_escalated else None
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Escalated chat processing failed: {e}")
+        return jsonify({
+            'success': False,
+            'error': 'Failed to process message',
+            'escalated': False
+        }), 500
+
+@app.route('/api/create-priority-ticket', methods=['POST'])
+def create_priority_ticket():
+    """Create a priority ticket for escalated users"""
+    try:
+        if not session.get('escalation_context', {}).get('escalated', False):
+            return jsonify({'error': 'Not an escalated session'}), 403
+        
+        data = request.get_json()
+        title = data.get('title', 'Escalated Support Request')
+        description = data.get('description', 'User escalated from JotForm chatbot')
+        
+        escalation_context = session.get('escalation_context', {})
+        
+        # Generate ticket ID
+        import uuid
+        ticket_id = f"PRIORITY-{datetime.now().strftime('%Y%m%d')}-{str(uuid.uuid4())[:8].upper()}"
+        
+        # Create ticket data
+        ticket_data = {
+            'ticket_number': ticket_id,
+            'title': title,
+            'description': description,
+            'priority': 'high',  # Escalated tickets get high priority
+            'status': 'registered',
+            'category': escalation_context.get('issue_type', 'general'),
+            'source': 'escalated_jotform',
+            'escalation_context': escalation_context,
+            'created_at': datetime.now().isoformat(),
+            'updated_at': datetime.now().isoformat()
+        }
+        
+        # Save to existing tickets system
+        tickets[ticket_id] = ticket_data
+        save_tickets()
+        
+        # Try to assign to agent using existing logic
+        try:
+            agent, agent_id, eta = find_best_available_agent(ticket_data['category'], 'high')
+            if agent and agent_id:
+                assign_ticket_to_agent(ticket_id, agent_id)
+                ticket_data['assigned_agent'] = agent['name']
+                ticket_data['eta_minutes'] = eta
+        except:
+            pass  # Continue even if agent assignment fails
+        
+        logger.info(f"✅ Priority ticket created from escalation: {ticket_id}")
+        
+        return jsonify({
+            'success': True,
+            'message': 'Priority ticket created successfully',
+            'ticket': {
+                'id': ticket_id,
+                'title': title,
+                'priority': 'high',
+                'status': 'registered',
+                'created': ticket_data['created_at'],
+                'agent': ticket_data.get('assigned_agent', 'Being assigned...'),
+                'eta': ticket_data.get('eta_minutes', 30)
+            }
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to create priority ticket: {e}")
+        return jsonify({'error': 'Failed to create ticket', 'details': str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='172.28.0.217', port=5000)

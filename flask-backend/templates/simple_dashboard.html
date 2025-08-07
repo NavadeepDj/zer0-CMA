@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Zer0 Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background: #ff3742;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .welcome-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .welcome-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+        }
+
+        .support-section {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .support-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            color: #666;
+        }
+
+        .tab-btn.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .jotform-container {
+            min-height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .escalation-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .escalation-notice.show {
+            display: block;
+        }
+
+        .escalation-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .escalation-btn:hover {
+            background: #5a67d8;
+        }
+
+        .custom-chatbot {
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-btn:hover {
+            background: #5a67d8;
+        }
+
+        .action-btn.secondary {
+            background: #6c757d;
+        }
+
+        .action-btn.secondary:hover {
+            background: #5a6268;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .support-tabs {
+                flex-direction: column;
+            }
+            
+            .quick-actions {
+                flex-direction: column;
+            }
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🛠️ Zer0 Support</div>
+            <div class="user-info">
+                <div class="user-avatar">{{ user_name[0].upper() if user_name else 'U' }}</div>
+                <span>{{ user_name or 'User' }}</span>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1 class="welcome-title">Welcome, {{ user_name }}! 👋</h1>
+            <p class="welcome-subtitle">Your personal support dashboard with JotForm integration</p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Quick Actions -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="card-icon">⚡</span>
+                    Quick Actions
+                </div>
+                <div class="quick-actions">
+                    <button class="action-btn" onclick="showSupportTab('jotform')">
+                        💬 Start JotForm Chat
+                    </button>
+                    <button class="action-btn secondary" onclick="showSupportTab('advanced')">
+                        🔧 Advanced Support
+                    </button>
+                    <a href="/" class="action-btn secondary">
+                        🤖 Direct Chatbot
+                    </a>
+                    <button class="action-btn secondary" onclick="refreshDashboard()">
+                        🔄 Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Info -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="card-icon">👤</span>
+                    Your Account
+                </div>
+                <p><strong>Name:</strong> {{ user_name }}</p>
+                <p><strong>Email:</strong> {{ user_email }}</p>
+                <p><strong>Status:</strong> <span style="color: green;">Active</span></p>
+                <p><strong>Role:</strong> Customer</p>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="support-section">
+            <div class="card-title">
+                <span class="card-icon">💬</span>
+                Customer Support
+            </div>
+            
+            <!-- Support Tabs -->
+            <div class="support-tabs">
+                <button class="tab-btn active" onclick="showTab('jotform')">
+                    JotForm Assistant
+                </button>
+                <button class="tab-btn" onclick="showTab('advanced')">
+                    Advanced Support
+                </button>
+                <button class="tab-btn" onclick="showTab('info')">
+                    Support Info
+                </button>
+            </div>
+
+            <!-- JotForm Tab -->
+            <div class="tab-content active" id="jotform-tab">
+                <div class="escalation-notice" id="escalationNotice">
+                    <h4>🚀 Need More Help?</h4>
+                    <p>If the JotForm assistant can't help with your issue, you can escalate to our advanced support system with AI-powered assistance and direct agent connection.</p>
+                    <button class="escalation-btn" onclick="escalateToAdvanced()">
+                        Escalate to Advanced Support
+                    </button>
+                </div>
+                
+                <div class="jotform-container" id="jotformContainer">
+                    <!-- JotForm will be embedded here -->
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading JotForm Assistant...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Support Tab -->
+            <div class="tab-content" id="advanced-tab">
+                <div style="margin-bottom: 1rem;">
+                    <h4>🤖 Advanced AI Support</h4>
+                    <p>Our advanced support system uses AI to understand your issues better and can connect you directly with specialized agents.</p>
+                </div>
+                <iframe 
+                    src="/?ref=dashboard&escalated=true" 
+                    class="custom-chatbot"
+                    frameborder="0"
+                    id="advancedChatbot">
+                </iframe>
+            </div>
+
+            <!-- Info Tab -->
+            <div class="tab-content" id="info-tab">
+                <div style="margin-bottom: 1rem;">
+                    <h4>📋 Support Information</h4>
+                    <p>Learn about our support options and how to get help.</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px;">
+                    <h5>🎯 Support Options:</h5>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li><strong>JotForm Assistant:</strong> Quick help for common issues</li>
+                        <li><strong>Advanced AI Support:</strong> Comprehensive AI-powered assistance</li>
+                        <li><strong>Direct Agent Connection:</strong> Speak with human experts</li>
+                        <li><strong>Priority Escalation:</strong> Fast-track urgent issues</li>
+                    </ul>
+                    
+                    <h5>⏱️ Response Times:</h5>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li><strong>JotForm:</strong> Instant responses</li>
+                        <li><strong>AI Support:</strong> Real-time assistance</li>
+                        <li><strong>Agent Connection:</strong> Within 15 minutes</li>
+                        <li><strong>Email Support:</strong> Within 4 hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JotForm Embed Script -->
+    <script src='https://cdn.jotfor.ms/agent/embedjs/01987e03e85a787ab50dae64c6d008d42bbd/embed.js?skipWelcome=1&maximizable=1'></script>
+
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadJotForm();
+            
+            // Show escalation notice after 30 seconds
+            setTimeout(() => {
+                document.getElementById('escalationNotice').classList.add('show');
+            }, 30000);
+        });
+
+        // Load JotForm
+        function loadJotForm() {
+            try {
+                const container = document.getElementById('jotformContainer');
+                
+                // Clear loading message after a delay
+                setTimeout(() => {
+                    if (container.innerHTML.includes('Loading JotForm')) {
+                        container.innerHTML = `
+                            <iframe 
+                                src="https://form.jotform.com/01987e03e85a787ab50dae64c6d008d42bbd" 
+                                style="width: 100%; height: 600px; border: none; border-radius: 10px;"
+                                title="JotForm Support Assistant">
+                            </iframe>
+                        `;
+                    }
+                }, 3000);
+                
+            } catch (error) {
+                console.error('Failed to load JotForm:', error);
+                document.getElementById('jotformContainer').innerHTML = 
+                    '<p>Failed to load JotForm assistant. Please try refreshing the page.</p>';
+            }
+        }
+
+        // Tab switching
+        function showTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Special handling for advanced tab
+            if (tabName === 'advanced') {
+                const iframe = document.getElementById('advancedChatbot');
+                if (iframe) {
+                    iframe.src = '/?ref=dashboard&escalated=true&user={{ user_email }}';
+                }
+            }
+        }
+
+        // Show support tab (called from quick actions)
+        function showSupportTab(tabName) {
+            // Find and click the appropriate tab button
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => {
+                if (btn.textContent.toLowerCase().includes(tabName)) {
+                    btn.click();
+                }
+            });
+            
+            // Scroll to support section
+            document.querySelector('.support-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Escalate to advanced support
+        function escalateToAdvanced() {
+            showTab('advanced');
+            
+            // Hide escalation notice
+            document.getElementById('escalationNotice').classList.remove('show');
+            
+            // Add escalation context to advanced chatbot
+            const iframe = document.getElementById('advancedChatbot');
+            if (iframe) {
+                iframe.src = '/?ref=jotform&escalated=true&reason=user_escalation&user={{ user_email }}';
+            }
+        }
+
+        // Refresh dashboard
+        function refreshDashboard() {
+            // Show success message
+            const message = document.createElement('div');
+            message.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 1rem; border-radius: 5px; z-index: 9999;';
+            message.textContent = '✅ Dashboard refreshed';
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                document.body.removeChild(message);
+            }, 3000);
+            
+            // Reload JotForm
+            loadJotForm();
+        }
+
+        // Listen for messages from JotForm (if needed)
+        window.addEventListener('message', function(event) {
+            // Handle JotForm events
+            if (event.data && event.data.type === 'jotform') {
+                console.log('JotForm event:', event.data);
+                
+                // If JotForm indicates escalation needed
+                if (event.data.action === 'escalate') {
+                    escalateToAdvanced();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

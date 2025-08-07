@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zer0 Support Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #ff3742;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+        }
+
+        .support-section {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .support-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            color: #666;
+        }
+
+        .tab-btn.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .jotform-container {
+            min-height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .escalation-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .escalation-notice.show {
+            display: block;
+        }
+
+        .escalation-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .escalation-btn:hover {
+            background: #5a67d8;
+        }
+
+        .custom-chatbot {
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .ticket-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .ticket-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .ticket-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-registered {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-assigned {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .status-in-progress {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+
+        .status-resolved {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-btn:hover {
+            background: #5a67d8;
+        }
+
+        .action-btn.secondary {
+            background: #6c757d;
+        }
+
+        .action-btn.secondary:hover {
+            background: #5a6268;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .support-tabs {
+                flex-direction: column;
+            }
+
+            .quick-actions {
+                flex-direction: column;
+            }
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Enhanced ticket styling */
+        .ticket-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ticket-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e9ecef;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Modal styles */
+        .ticket-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .detail-row {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        /* Profile settings styles */
+        .profile-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .profile-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+        }
+
+        .notification-preferences {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .profile-form {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🛠️ Zer0 Support</div>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <span id="userName">Loading...</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- My Tickets -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="card-icon">🎫</span>
+                    My Support Tickets
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalTickets">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="openTickets">0</div>
+                        <div class="stat-label">Open</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="resolvedTickets">0</div>
+                        <div class="stat-label">Resolved</div>
+                    </div>
+                </div>
+                <div class="ticket-list" id="ticketList">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading tickets...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="card-icon">⚡</span>
+                    Quick Actions
+                </div>
+                <div class="quick-actions">
+                    <button class="action-btn" onclick="showSupportTab('jotform')">
+                        💬 Start New Chat
+                    </button>
+                    <button class="action-btn secondary" onclick="openAdvancedSupport()">
+                        🔧 Advanced Support
+                    </button>
+                    <a href="/agents" class="action-btn secondary">
+                        👥 Agent View
+                    </a>
+                    <button class="action-btn secondary" onclick="refreshDashboard()">
+                        🔄 Refresh
+                    </button>
+                    <button class="action-btn secondary" onclick="showProfileSettings()">
+                        ⚙️ Profile Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="support-section">
+            <div class="card-title">
+                <span class="card-icon">💬</span>
+                Customer Support
+            </div>
+
+            <!-- Support Tabs -->
+            <div class="support-tabs">
+                <button class="tab-btn active" onclick="showTab('jotform')">
+                    JotForm Assistant
+                </button>
+                <button class="tab-btn" onclick="showTab('advanced')">
+                    Advanced Support
+                </button>
+                <button class="tab-btn" onclick="showTab('status')">
+                    Check Status
+                </button>
+            </div>
+
+            <!-- JotForm Tab -->
+            <div class="tab-content active" id="jotform-tab">
+                <div class="escalation-notice" id="escalationNotice">
+                    <h4>🚀 Need More Help?</h4>
+                    <p>If the basic assistant can't help with your issue, you can escalate to our advanced support
+                        system with AI-powered assistance and direct agent connection.</p>
+                    <button class="escalation-btn" onclick="escalateToAdvanced()">
+                        Escalate to Advanced Support
+                    </button>
+                </div>
+
+                <div class="jotform-container" id="jotformContainer">
+                    <!-- JotForm will be embedded here -->
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading JotForm Assistant...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Support Tab -->
+            <div class="tab-content" id="advanced-tab">
+                <div style="margin-bottom: 1rem;">
+                    <h4>🤖 Advanced AI Support</h4>
+                    <p>Our advanced support system uses AI to understand your issues better and can connect you directly
+                        with specialized agents.</p>
+                </div>
+                <iframe src="/chatbot" class="custom-chatbot" frameborder="0" id="advancedChatbot">
+                </iframe>
+            </div>
+
+            <!-- Status Check Tab -->
+            <div class="tab-content" id="status-tab">
+                <div style="margin-bottom: 1rem;">
+                    <h4>📋 Check Ticket Status</h4>
+                    <p>Enter your ticket ID to check the current status and get updates.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <input type="text" id="ticketIdInput" placeholder="Enter ticket ID (e.g., ZER0-2025-001)"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 1rem;">
+                    <button class="action-btn" onclick="checkTicketStatus()">
+                        Check Status
+                    </button>
+                </div>
+
+                <div id="statusResult"></div>
+            </div>
+        </div>
+
+        <!-- Profile Settings Section (Hidden by default) -->
+        <div class="profile-section" id="profileSection" style="display: none;">
+            <div class="card-title">
+                <span class="card-icon">⚙️</span>
+                Profile Settings
+            </div>
+
+            <form class="profile-form" id="profileForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="timezone">Timezone</label>
+                    <select id="timezone" name="timezone">
+                        <option value="UTC">UTC</option>
+                        <option value="America/New_York">Eastern Time</option>
+                        <option value="America/Chicago">Central Time</option>
+                        <option value="America/Denver">Mountain Time</option>
+                        <option value="America/Los_Angeles">Pacific Time</option>
+                        <option value="Asia/Kolkata">India Standard Time</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Notification Preferences</label>
+                    <div class="notification-preferences">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="emailNotifications" name="notifications" value="email" checked>
+                            <label for="emailNotifications">Email Notifications</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="smsNotifications" name="notifications" value="sms">
+                            <label for="smsNotifications">SMS Notifications</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="pushNotifications" name="notifications" value="push" checked>
+                            <label for="pushNotifications">Push Notifications</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="language">Preferred Language</label>
+                    <select id="language" name="language">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width" style="margin-top: 2rem;">
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <button type="button" class="action-btn secondary" onclick="hideProfileSettings()">
+                            Cancel
+                        </button>
+                        <button type="submit" class="action-btn">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+    <!-- JotForm Embed Script -->
+    <script
+        src='https://cdn.jotfor.ms/agent/embedjs/01987e03e85a787ab50dae64c6d008d42bbd/embed.js?skipWelcome=1&maximizable=1'></script>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDlO79eAzP01wCdCSYs9v0RpmD4FIYcnxs",
+            authDomain: "customermanagesys.firebaseapp.com",
+            projectId: "customermanagesys",
+            storageBucket: "customermanagesys.firebasestorage.app",
+            messagingSenderId: "329844596313",
+            appId: "1:329844596313:web:23dc71021a65a4e1b59b48"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Global variables
+        let currentUser = null;
+        let userTickets = [];
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeDashboard();
+            loadJotForm();
+            startRealTimeUpdates();
+        });
+
+        // Initialize dashboard
+        async function initializeDashboard() {
+            try {
+                // Load user profile
+                await loadUserProfile();
+
+                // Load user tickets
+                await loadUserTickets();
+
+                // Show escalation notice after 30 seconds
+                setTimeout(() => {
+                    document.getElementById('escalationNotice').classList.add('show');
+                }, 30000);
+
+            } catch (error) {
+                console.error('Dashboard initialization failed:', error);
+                // Redirect to login if not authenticated
+                window.location.href = '/auth';
+            }
+        }
+
+        // Load user profile
+        async function loadUserProfile() {
+            try {
+                const response = await fetch('/api/auth/profile');
+                if (response.ok) {
+                    const result = await response.json();
+                    currentUser = result.user;
+
+                    // Check if user should be redirected based on role
+                    if (currentUser.role === 'admin') {
+                        console.log('Admin user detected, redirecting to admin panel');
+                        window.location.href = '/admin';
+                        return;
+                    } else if (currentUser.role === 'agent') {
+                        console.log('Agent user detected, redirecting to agent dashboard');
+                        window.location.href = '/agents';
+                        return;
+                    }
+
+                    // Update UI for customer users
+                    document.getElementById('userName').textContent = currentUser.display_name || currentUser.email;
+                    document.getElementById('userAvatar').textContent = (currentUser.display_name || currentUser.email).charAt(0).toUpperCase();
+                } else {
+                    throw new Error('Failed to load profile');
+                }
+            } catch (error) {
+                console.error('Failed to load user profile:', error);
+                throw error;
+            }
+        }
+
+        // Load user tickets
+        async function loadUserTickets() {
+            try {
+                const response = await fetch('/api/dashboard/tickets');
+                if (response.ok) {
+                    const result = await response.json();
+                    userTickets = result.tickets || [];
+
+                    updateTicketStats();
+                    displayTickets();
+                } else {
+                    throw new Error('Failed to fetch tickets');
+                }
+            } catch (error) {
+                console.error('Failed to load tickets:', error);
+                document.getElementById('ticketList').innerHTML = '<p>Failed to load tickets. Please try refreshing the page.</p>';
+            }
+        }
+
+        // Real-time ticket updates
+        function startRealTimeUpdates() {
+            // Poll for updates every 30 seconds
+            setInterval(async () => {
+                try {
+                    await loadUserTickets();
+                } catch (error) {
+                    console.error('Real-time update failed:', error);
+                }
+            }, 30000);
+        }
+
+        // Update ticket statistics
+        function updateTicketStats() {
+            const total = userTickets.length;
+            const open = userTickets.filter(t => !['resolved', 'closed'].includes(t.status)).length;
+            const resolved = userTickets.filter(t => ['resolved', 'closed'].includes(t.status)).length;
+
+            document.getElementById('totalTickets').textContent = total;
+            document.getElementById('openTickets').textContent = open;
+            document.getElementById('resolvedTickets').textContent = resolved;
+        }
+
+        // Display tickets with enhanced information
+        function displayTickets() {
+            const ticketList = document.getElementById('ticketList');
+
+            if (userTickets.length === 0) {
+                ticketList.innerHTML = '<p>No tickets found. Start a new chat to create your first support ticket!</p>';
+                return;
+            }
+
+            const ticketsHtml = userTickets.map(ticket => {
+                const statusClass = ticket.status.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+                const priorityColor = getPriorityColor(ticket.priority);
+                const progressPercentage = getProgressPercentage(ticket.status);
+
+                return `
+                    <div class="ticket-item" onclick="showTicketDetails('${ticket.id}')">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong>${ticket.id}</strong>
+                            <span class="ticket-status status-${statusClass}">${ticket.status}</span>
+                        </div>
+                        <div style="margin-bottom: 0.5rem; font-weight: 500;">${ticket.title}</div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="progress-bar" style="margin-bottom: 0.5rem;">
+                            <div class="progress-fill" style="width: ${progressPercentage}%; background: ${priorityColor};"></div>
+                        </div>
+                        
+                        <div style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">
+                            Created: ${formatDate(ticket.created)} | Priority: <span style="color: ${priorityColor}; font-weight: bold;">${ticket.priority}</span>
+                        </div>
+                        
+                        ${ticket.agent ? `
+                            <div style="font-size: 0.9rem; color: #333; margin-bottom: 0.3rem;">
+                                👤 Agent: <strong>${ticket.agent}</strong>
+                            </div>
+                        ` : ''}
+                        
+                        ${ticket.eta ? `
+                            <div style="font-size: 0.9rem; color: #667eea; font-weight: bold;">
+                                ⏱️ ETA: ${ticket.eta} minutes
+                            </div>
+                        ` : ''}
+                        
+                        ${ticket.updated && ticket.updated !== ticket.created ? `
+                            <div style="font-size: 0.8rem; color: #999; margin-top: 0.3rem;">
+                                Last updated: ${formatDate(ticket.updated)}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            ticketList.innerHTML = ticketsHtml;
+        }
+
+        // Helper functions for ticket display
+        function getPriorityColor(priority) {
+            const colors = {
+                'urgent': '#ff4757',
+                'high': '#ff6b35',
+                'medium': '#ffa502',
+                'low': '#2ed573'
+            };
+            return colors[priority] || '#6c757d';
+        }
+
+        function getProgressPercentage(status) {
+            const progress = {
+                'registered': 25,
+                'assigned': 50,
+                'in-progress': 75,
+                'resolved': 100,
+                'closed': 100
+            };
+            return progress[status] || 0;
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            } catch {
+                return dateString;
+            }
+        }
+
+        // Show detailed ticket information
+        function showTicketDetails(ticketId) {
+            const ticket = userTickets.find(t => t.id === ticketId);
+            if (!ticket) return;
+
+            const modal = document.createElement('div');
+            modal.className = 'ticket-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Ticket Details: ${ticket.id}</h3>
+                        <button class="close-btn" onclick="closeModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="detail-row">
+                            <strong>Title:</strong> ${ticket.title}
+                        </div>
+                        <div class="detail-row">
+                            <strong>Status:</strong> <span class="ticket-status status-${ticket.status.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}">${ticket.status}</span>
+                        </div>
+                        <div class="detail-row">
+                            <strong>Priority:</strong> <span style="color: ${getPriorityColor(ticket.priority)}; font-weight: bold;">${ticket.priority}</span>
+                        </div>
+                        <div class="detail-row">
+                            <strong>Category:</strong> ${ticket.category || 'General'}
+                        </div>
+                        <div class="detail-row">
+                            <strong>Created:</strong> ${formatDate(ticket.created)}
+                        </div>
+                        ${ticket.updated ? `
+                            <div class="detail-row">
+                                <strong>Last Updated:</strong> ${formatDate(ticket.updated)}
+                            </div>
+                        ` : ''}
+                        ${ticket.agent ? `
+                            <div class="detail-row">
+                                <strong>Assigned Agent:</strong> ${ticket.agent}
+                            </div>
+                        ` : ''}
+                        ${ticket.eta ? `
+                            <div class="detail-row">
+                                <strong>Estimated Resolution:</strong> ${ticket.eta} minutes
+                            </div>
+                        ` : ''}
+                        ${ticket.description ? `
+                            <div class="detail-row">
+                                <strong>Description:</strong><br>
+                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; margin-top: 0.5rem;">
+                                    ${ticket.description}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="action-btn" onclick="contactAgentAboutTicket('${ticket.id}')">
+                            Contact Agent
+                        </button>
+                        <button class="action-btn secondary" onclick="closeModal()">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        }
+
+        function closeModal() {
+            const modal = document.querySelector('.ticket-modal');
+            if (modal) {
+                document.body.removeChild(modal);
+            }
+        }
+
+        function contactAgentAboutTicket(ticketId) {
+            closeModal();
+            showTab('advanced');
+
+            // Pre-populate the advanced chatbot with ticket context
+            const iframe = document.getElementById('advancedChatbot');
+            if (iframe) {
+                iframe.src = `/chatbot?ticket_id=${ticketId}&action=contact_agent`;
+            }
+        }
+
+        // Load JotForm
+        function loadJotForm() {
+            try {
+                // Initialize JotForm embed
+                const container = document.getElementById('jotformContainer');
+
+                // Clear loading message
+                container.innerHTML = '';
+
+                // Create JotForm iframe or embed
+                // The script is already loaded, so JotForm should initialize automatically
+
+                // If JotForm doesn't load automatically, create iframe fallback
+                setTimeout(() => {
+                    if (container.innerHTML === '') {
+                        container.innerHTML = `
+                            <iframe 
+                                src="https://form.jotform.com/01987e03e85a787ab50dae64c6d008d42bbd" 
+                                style="width: 100%; height: 600px; border: none; border-radius: 10px;"
+                                title="JotForm Support Assistant">
+                            </iframe>
+                        `;
+                    }
+                }, 3000);
+
+            } catch (error) {
+                console.error('Failed to load JotForm:', error);
+                document.getElementById('jotformContainer').innerHTML =
+                    '<p>Failed to load JotForm assistant. Please try refreshing the page.</p>';
+            }
+        }
+
+        // Tab switching
+        function showTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // Special handling for advanced tab
+            if (tabName === 'advanced') {
+                const iframe = document.getElementById('advancedChatbot');
+                if (iframe) {
+                    // Add referral parameter to indicate escalation from JotForm
+                    iframe.src = '/chatbot?referral=jotform&escalated=true';
+                }
+            }
+        }
+
+        // Show support tab (called from quick actions)
+        function showSupportTab(tabName) {
+            showTab(tabName);
+
+            // Scroll to support section
+            document.querySelector('.support-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Escalate to advanced support
+        function escalateToAdvanced() {
+            showTab('advanced');
+
+            // Hide escalation notice
+            document.getElementById('escalationNotice').classList.remove('show');
+
+            // Add escalation context to advanced chatbot
+            const iframe = document.getElementById('advancedChatbot');
+            if (iframe) {
+                iframe.src = '/chatbot?referral=jotform&escalated=true&reason=user_escalation';
+            }
+        }
+
+        // Check ticket status
+        async function checkTicketStatus() {
+            const ticketId = document.getElementById('ticketIdInput').value.trim();
+            const resultDiv = document.getElementById('statusResult');
+
+            if (!ticketId) {
+                resultDiv.innerHTML = '<div style="color: red;">Please enter a ticket ID</div>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<div class="loading"><div class="spinner"></div>Checking status...</div>';
+
+            try {
+                // In a real implementation, this would call your Flask API
+                const response = await fetch(`/api/tickets/${ticketId}/status`);
+
+                if (response.ok) {
+                    const ticket = await response.json();
+                    resultDiv.innerHTML = `
+                        <div class="ticket-item">
+                            <h4>${ticket.id}</h4>
+                            <p><strong>Status:</strong> <span class="ticket-status status-${ticket.status}">${ticket.status}</span></p>
+                            <p><strong>Title:</strong> ${ticket.title}</p>
+                            <p><strong>Created:</strong> ${ticket.created}</p>
+                            <p><strong>Last Updated:</strong> ${ticket.updated}</p>
+                            ${ticket.agent ? `<p><strong>Assigned Agent:</strong> ${ticket.agent}</p>` : ''}
+                            ${ticket.eta ? `<p><strong>Estimated Resolution:</strong> ${ticket.eta}</p>` : ''}
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = '<div style="color: red;">Ticket not found</div>';
+                }
+            } catch (error) {
+                console.error('Failed to check ticket status:', error);
+                resultDiv.innerHTML = '<div style="color: red;">Failed to check status. Please try again.</div>';
+            }
+        }
+
+        // Refresh dashboard
+        async function refreshDashboard() {
+            try {
+                await loadUserTickets();
+
+                // Show success message
+                const message = document.createElement('div');
+                message.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 1rem; border-radius: 5px; z-index: 9999;';
+                message.textContent = '✅ Dashboard refreshed';
+                document.body.appendChild(message);
+
+                setTimeout(() => {
+                    document.body.removeChild(message);
+                }, 3000);
+
+            } catch (error) {
+                console.error('Failed to refresh dashboard:', error);
+            }
+        }
+
+        // Logout function
+        async function logout() {
+            try {
+                // Sign out from Firebase
+                if (typeof firebase !== 'undefined' && firebase.auth) {
+                    await firebase.auth().signOut();
+                }
+
+                // Clear backend session
+                const response = await fetch('/api/auth/logout', { method: 'POST' });
+                if (response.ok) {
+                    window.location.href = '/auth';
+                }
+            } catch (error) {
+                console.error('Logout failed:', error);
+                // Force redirect anyway
+                window.location.href = '/auth';
+            }
+        }
+
+        // Open advanced support in new tab
+        // function showSupportTab(){
+        //     window.open('')
+        // }
+        function openAdvancedSupport() {
+            window.open('http://172.28.0.217:5000', '_blank');
+        }
+
+        // Profile Settings Functions
+        function showProfileSettings() {
+            document.getElementById('profileSection').style.display = 'block';
+            document.getElementById('profileSection').scrollIntoView({ behavior: 'smooth' });
+            loadUserProfile();
+        }
+
+        function hideProfileSettings() {
+            document.getElementById('profileSection').style.display = 'none';
+        }
+
+        function loadUserProfile() {
+            if (currentUser) {
+                document.getElementById('fullName').value = currentUser.display_name || '';
+                document.getElementById('email').value = currentUser.email || '';
+                document.getElementById('phone').value = currentUser.phone || '';
+                document.getElementById('timezone').value = currentUser.timezone || 'UTC';
+                document.getElementById('language').value = currentUser.language || 'en';
+
+                // Load notification preferences
+                const notifications = currentUser.notification_preferences || ['email', 'push'];
+                document.getElementById('emailNotifications').checked = notifications.includes('email');
+                document.getElementById('smsNotifications').checked = notifications.includes('sms');
+                document.getElementById('pushNotifications').checked = notifications.includes('push');
+            }
+        }
+
+        // Handle profile form submission
+        document.getElementById('profileForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const profileData = {
+                fullName: formData.get('fullName'),
+                phone: formData.get('phone'),
+                timezone: formData.get('timezone'),
+                language: formData.get('language'),
+                notifications: formData.getAll('notifications')
+            };
+
+            try {
+                const response = await fetch('/api/auth/profile', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(profileData)
+                });
+
+                if (response.ok) {
+                    showNotification('Profile updated successfully!', 'success');
+                    hideProfileSettings();
+                    await loadUserProfile(); // Refresh user data
+                } else {
+                    throw new Error('Failed to update profile');
+                }
+            } catch (error) {
+                console.error('Failed to update profile:', error);
+                showNotification('Failed to update profile. Please try again.', 'error');
+            }
+        });
+
+        // Show notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed; 
+                top: 20px; 
+                right: 20px; 
+                background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#17a2b8'}; 
+                color: white; 
+                padding: 1rem; 
+                border-radius: 5px; 
+                z-index: 9999;
+                max-width: 300px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 5000);
+        }
+
+        // Create new ticket from dashboard
+        async function createNewTicket() {
+            const title = prompt('Enter ticket title:');
+            if (!title) return;
+
+            const description = prompt('Enter ticket description:');
+            if (!description) return;
+
+            const category = prompt('Enter category (technical/billing/general):') || 'general';
+
+            try {
+                const response = await fetch('/api/dashboard/create-ticket', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        description: description,
+                        category: category
+                    })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showNotification(`Ticket ${result.ticket.id} created successfully!`, 'success');
+                    await loadUserTickets(); // Refresh tickets
+                } else {
+                    throw new Error('Failed to create ticket');
+                }
+            } catch (error) {
+                console.error('Failed to create ticket:', error);
+                showNotification('Failed to create ticket. Please try again.', 'error');
+            }
+        }
+
+        // Listen for messages from JotForm (if needed)
+        window.addEventListener('message', function (event) {
+            // Handle JotForm events
+            if (event.data && event.data.type === 'jotform') {
+                console.log('JotForm event:', event.data);
+
+                // If JotForm indicates escalation needed
+                if (event.data.action === 'escalate') {
+                    escalateToAdvanced();
+                }
+
+                // If JotForm creates a ticket, refresh our ticket list
+                if (event.data.action === 'ticket_created') {
+                    setTimeout(() => {
+                        loadUserTickets();
+                    }, 2000);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
